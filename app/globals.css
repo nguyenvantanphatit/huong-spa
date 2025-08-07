@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "trajan";
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/TrajanPro3Bold.otf");
+}
+
+@font-face {
+  font-family: "trajan";
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/TrajanPro3SemiBold.otf");
+}
+
+@font-face {
+  font-family: "trajan";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/TrajanPro3Regular.otf");
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[#FFEEE2] text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "trajan", serif;
+  }
+}
+
+.prose {
+  @apply max-w-none;
+}
+
+.prose p {
+  @apply leading-relaxed;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-family: "trajan", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
