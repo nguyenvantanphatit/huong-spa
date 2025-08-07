@@ -60,9 +60,10 @@ export default async function AboutPage() {
           <AnimatedAboutSection>
             <div className="text-center">
               <h6 className="text-xl md:text-[38px] font-medium text-[#824435] mb-8 md:mt-16 pt-8 mt-4 leading-7 uppercase">
-                Mến chào quý khách,
+                không chỉ là spa
+
                 <br />
-                <span className="block md:mt-6">tôi là Ty Anh Nguyễn</span>
+                <span className="block md:mt-6">Mà là một hành trình</span>
               </h6>
               <div className="flex flex-col md:flex-row md:gap-[72px] text-[#2E333D] font-semibold text-sm md:text-xl max-w-[1284px] mx-auto text-start md:text-center">
                 <div className="space-y-6 text-justify">

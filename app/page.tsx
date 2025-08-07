@@ -36,16 +36,11 @@ export default function HomePage() {
           }),
         }}
       />
-      <div className="min-h-screen">
-        {/* <Header /> */}
         <Hero />
-        <div className="flex min-h-[calc(100vh-4rem)] flex-col">
-            <SeactionProduct />
-            <SeactionDesc />
-            <SeactionHome />
-          <SeactionContact />
-        </div >
-      </div>
+        <SeactionProduct />
+        <SeactionDesc />
+        <SeactionHome />
+        <SeactionContact />
     </>
   )
 }

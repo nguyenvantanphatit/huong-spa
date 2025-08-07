@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google"
 import "./globals.css"
 import FooterSeaction from "@/components/footer"
 import Script from "next/script"
+import Header from "@/components/header"
 
 const montserrat = Montserrat({
   subsets: ["latin", "vietnamese"],
@@ -160,6 +161,7 @@ export default function RootLayout({
         />
       </head>
       <body className={montserrat.className}>
+         <Header />
         {children}
         <FooterSeaction />
       </body>

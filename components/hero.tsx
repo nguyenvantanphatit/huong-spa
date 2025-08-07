@@ -10,7 +10,7 @@ export default async function Hero() {
   const backgroundSrc = isMobile ? "/pagehome/banner_mb.png" : "/pagehome/banner.png"
 
   return (
-    <section className="relative h-[600px] overflow-hidden">
+    <section className="relative h-[600px] container mx-auto mt-10">
       <div className="absolute inset-0 bg-[#FFEEE2]">
         <Image
           src={backgroundSrc}
@@ -25,12 +25,12 @@ export default async function Hero() {
         />
       </div>
 
-      <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
+      <div className="relative container mx-auto px-20 h-full flex flex-col justify-center">
         <div className="relative z-10 max-w-4xl mt-12 md:mt-0">
-          <h2 className="text-xl md:text-[48px] font-normal text-start text-white mb-12 md:mb-16">
+          <h2 className="text-xl md:text-[48px] font-normal text-start text-white mb-12">
             Ruby Hương Spa
           </h2>
-          <p className="text-xl md:text-[48px] font-normal text-start text-white uppercase mb-12">
+          <p className="text-xl md:text-[28px] font-normal text-start text-white uppercase mb-4">
             An yên từ bên trong
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">

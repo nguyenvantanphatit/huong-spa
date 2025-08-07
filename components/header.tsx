@@ -11,8 +11,6 @@ import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === "/"
@@ -20,22 +18,12 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-
-      setScrolled(currentScrollY > 20)
-
-      if (currentScrollY < lastScrollY || currentScrollY < 10) {
-        setIsVisible(true)
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false)
-      }
-
-      setLastScrollY(currentScrollY)
+      setScrolled(window.scrollY > 20)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [lastScrollY])
+  }, [])
 
   const menuItems = [
     { href: "/", label: "TRANG CHỦ" },
@@ -52,9 +40,7 @@ export default function Header() {
     return (
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          // Transform based on visibility
-          isVisible ? "translate-y-0" : "-translate-y-full",
+          "sticky top-0 left-0 right-0 z-50 transition-all duration-300",
           // Background based on scroll
           scrolled
             ? isHome
@@ -171,7 +157,7 @@ export default function Header() {
                     className="inline-flex items-center justify-center gap-2 py-3 px-8 rounded-full whitespace-nowrap bg-[#824435] text-white font-semibold w-full"
                   >
                     <img src="/icon/left.png" alt="icon" />
-                    <span>BOOKING</span>
+                    <span>Liên hệ</span>
                   </a>
                 </SheetFooter>
               </SheetContent>
@@ -185,9 +171,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        // Transform based on visibility
-        isVisible ? "translate-y-0" : "-translate-y-full",
+        "sticky top-0 left-0 right-0 z-50 transition-all duration-300",
         // Background based on scroll
         scrolled
           ? isHome
@@ -253,7 +237,7 @@ export default function Header() {
               )}
             >
               <img src="/icon/left.png" alt="icon" />
-              <span>BOOKING</span>
+              <span>Liên hệ</span>
             </a>
           </div>
         </div>
