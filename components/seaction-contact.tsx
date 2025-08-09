@@ -34,12 +34,12 @@ export default function SeactionContact() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                    <h2 className="hidden md:block text-xl md:text-[34px] font-medium text-[#CC424E] mb-7 uppercase">
+                    <h2 className="hidden md:block text-xl md:text-[34px] font-normal text-[#CC424E] mb-7 uppercase">
                         Đặt lịch ngay hôm nay để
                         <br />
                         <span className="block mt-4">cảm nhận 🌿</span>
                     </h2>
-                    <h2 className="block md:hidden text-xl font-medium text-[#CC424E] mb-7 text-center md:text-start mt-6">
+                    <h2 className="block md:hidden text-xl font-normal text-[#CC424E] mb-7 text-center md:text-start mt-6">
                         Đặt lịch ngay hôm nay để
                         <br />
                         <span className="block mt-1.5">cảm nhận 🌿</span>
@@ -62,18 +62,17 @@ export default function SeactionContact() {
                         >
                             <Link
                                 href="/menu"
-                                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
-before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
-before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-hover:before:w-full hover:border-transparent hover:text-white"
+                                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
                             >
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-500 ease-in-out z-[-1] bg-[#CC424E]" />
+
                                 <svg
                                     width="25"
                                     height="24"
                                     viewBox="0 0 25 24"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="relative z-10 fill-current transition-colors duration-300 group-hover:text-white"
+                                    className="relative z-10 fill-current transition-colors duration-300"
                                 >
                                     <path
                                         fillRule="evenodd"
@@ -95,18 +94,17 @@ hover:before:w-full hover:border-transparent hover:text-white"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Nhắn tin qua Facebook"
-                                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
-                                before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
-                                before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-                                hover:before:w-full hover:border-transparent hover:text-white"
+                                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
                             >
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-500 ease-in-out z-[-1] bg-[#CC424E]" />
+
                                 <svg
                                     width="19"
                                     height="18"
                                     viewBox="0 0 19 18"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="relative z-10 fill-current transition-colors duration-300 group-hover:fill-white"
+                                    className="relative z-10 fill-current transition-colors duration-300"
                                 >
                                     <path
                                         fillRule="evenodd"
