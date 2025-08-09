@@ -20,12 +20,12 @@ export default function SectionMenu() {
   return (
     <>
       <motion.section
-        className="mt-28 md:pb-[70px] pb-5"
+        className="mt-16 pb-10 md:pb-16"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-xl md:text-[40px] font-medium text-[#CC424E] text-center">
+        <h1 className="text-xl md:text-[40px] font-normal text-[#CC424E] text-center">
           MENU RUPY HƯƠNG
         </h1>
       </motion.section>
@@ -34,11 +34,11 @@ export default function SectionMenu() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="cursor-pointer relative group"
-        onClick={() => openModal('/menu/Amor-spa-menu-01.webp')}
+        className="cursor-pointer relative group pb-10 md:pb-[160px]"
+        onClick={() => openModal('/menu/menu.png')}
       >
         <img
-          src="/menu/Amor-spa-menu-01.webp"
+          src="/menu/menu.png"
           alt="menu amor spa"
           className="w-full hover:opacity-90 transition-opacity duration-300"
         />
@@ -57,36 +57,6 @@ export default function SectionMenu() {
           </svg>
         </div>
       </motion.section>
-
-      {/* <motion.section
-        className="md:py-20 py-5 cursor-pointer relative group"
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        onClick={() => openModal('/menu/Amor-spa-menu-02.webp')}
-      >
-        <img
-          src="/menu/Amor-spa-menu-02.webp"
-          alt="menu amor spa"
-          className="w-full hover:opacity-90 transition-opacity duration-300"
-        />
-        <div className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <svg
-            width="20"
-            height="20"
-            fill="none"
-            stroke="white"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <path d="21 21l-4.35-4.35" />
-            <path d="11 8v6M8 11h6" />
-          </svg>
-        </div>
-      </motion.section> */}
-
       {isModalOpen && selectedImage && (
         <motion.div
           initial={{ opacity: 0 }}

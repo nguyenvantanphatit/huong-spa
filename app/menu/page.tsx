@@ -36,13 +36,10 @@ export default function MenuPage() {
           })
         }}
       />
-
-      <div className="flex min-h-[calc(100vh-4rem)] flex-col">
         <Container>
           <SectionMenu />
         </Container>
         <SeactionContact />
-      </div >
     </>
   )
 }
