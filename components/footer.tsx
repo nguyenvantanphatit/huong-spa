@@ -12,26 +12,30 @@ export default async function FooterSeaction() {
         }}
       >
         <Container>
-          {/* Logo center */}
+          {/* Logo center
           <div className="flex justify-center">
             <img
               src="/new/logo-footer.svg"
               className="object-contain w-[180px] md:w-[260px] mt-8"
               alt="Amor Logo"
             />
+          </div> */}
+          <div className="flex justify-center mt-16">
+            <h1 className="text-base md:text-[60px] font-bold">RUBY HƯƠNG SPA</h1>
+
           </div>
 
           {/* Navigation */}
-          <nav className="flex items-center justify-center gap-8 md:gap-[60px] mt-8">
+          <nav className="flex items-center justify-center gap-8 md:gap-[60px] pt-[76px]">
             <Link href="/ve-chung-toi" className="tracking-widest text-xs md:text-base font-medium">VỀ RUBY HƯƠNG</Link>
             <Link href="/menu" className="tracking-widest text-xs md:text-base font-medium">MENU</Link>
-            <Link href="/khoi-nghiep" className="tracking-widest text-xs md:text-base font-medium">SẢN PHẨM</Link>
+            <Link href="/product" className="tracking-widest text-xs md:text-base font-medium">SẢN PHẨM</Link>
           </nav>
           {/* Info line */}
-          <div className="flex justify-center flex-col md:flex-row gap-10 mt-8">
+          <div className="flex justify-center flex-col md:flex-row gap-10 mt-[52px]">
             <div className="flex items-center gap-2">
               <img src="/footer/address.svg" alt="Địa chỉ" />
-                <p className="text-[#2E333D] font-semibold text-xs md:text-base">89/57 đường 59, p14, TP.HCM</p>
+              <p className="text-[#2E333D] font-semibold text-xs md:text-base">89/57 đường 59, p14, TP.HCM</p>
             </div>
             <div className="flex items-center gap-2">
               <img src="/footer/time.svg" alt="Thời gian" />
@@ -43,7 +47,7 @@ export default async function FooterSeaction() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center mt-10 gap-4">
+          <div className="flex items-center justify-center mt-[62px] gap-4">
             <p className="text-xs md:text-sm">
               ©2025 AMOR, all rights reserved, powered by{" "}
               <a href="https://www.mera-tech.vn" target="_blank" className="hover:underline">MERA TECH</a>

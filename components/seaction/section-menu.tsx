@@ -8,7 +8,7 @@ export default function SectionMenu() {
   const [selectedImage, setSelectedImage] = useState<{ src: string } | null>(null)
 
   const openModal = (imageSrc: string) => {
-    setSelectedImage({ src: imageSrc})
+    setSelectedImage({ src: imageSrc })
     setIsModalOpen(true)
   }
 
@@ -25,11 +25,11 @@ export default function SectionMenu() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-xl md:text-[40px] font-medium text-[#824435] text-center">
-          MENU AMOR
+        <h1 className="text-xl md:text-[40px] font-medium text-[#CC424E] text-center">
+          MENU RUPY HƯƠNG
         </h1>
       </motion.section>
-      
+
       <motion.section
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -37,9 +37,9 @@ export default function SectionMenu() {
         className="cursor-pointer relative group"
         onClick={() => openModal('/menu/Amor-spa-menu-01.webp')}
       >
-        <img 
-          src="/menu/Amor-spa-menu-01.webp" 
-          alt="menu amor spa" 
+        <img
+          src="/menu/Amor-spa-menu-01.webp"
+          alt="menu amor spa"
           className="w-full hover:opacity-90 transition-opacity duration-300"
         />
         <div className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -57,8 +57,8 @@ export default function SectionMenu() {
           </svg>
         </div>
       </motion.section>
-      
-      <motion.section
+
+      {/* <motion.section
         className="md:py-20 py-5 cursor-pointer relative group"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -66,9 +66,9 @@ export default function SectionMenu() {
         transition={{ duration: 0.6, delay: 0.2 }}
         onClick={() => openModal('/menu/Amor-spa-menu-02.webp')}
       >
-        <img 
-          src="/menu/Amor-spa-menu-02.webp" 
-          alt="menu amor spa" 
+        <img
+          src="/menu/Amor-spa-menu-02.webp"
+          alt="menu amor spa"
           className="w-full hover:opacity-90 transition-opacity duration-300"
         />
         <div className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -85,7 +85,7 @@ export default function SectionMenu() {
             <path d="11 8v6M8 11h6" />
           </svg>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {isModalOpen && selectedImage && (
         <motion.div
@@ -106,7 +106,7 @@ export default function SectionMenu() {
             <div className="relative">
               <img
                 src={selectedImage.src}
-                alt="menu amor spa" 
+                alt="menu amor spa"
                 className="object-contain max-w-full max-h-full rounded-lg shadow-2xl cursor-zoom-in"
                 style={{ maxHeight: '80vh' }}
               />

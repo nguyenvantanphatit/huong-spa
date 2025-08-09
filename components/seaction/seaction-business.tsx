@@ -40,7 +40,7 @@ export default function SeactionBusiness() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
                             >
-                                <Link href="/khoi-nghiep" className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-white text-white overflow-hidden transition-all duration-300
+                                <Link href="/product" className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-white text-white overflow-hidden transition-all duration-300
     before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
     before:bg-white before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
     hover:before:w-full hover:border-transparent hover:text-[#824435]"

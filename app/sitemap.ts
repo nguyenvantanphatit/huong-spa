@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://amorspa.vn'
-  
+
   return [
     {
       url: baseUrl,
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/khoi-nghiep`,
+      url: `${baseUrl}/product`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,

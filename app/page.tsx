@@ -36,11 +36,14 @@ export default function HomePage() {
           }),
         }}
       />
+      <div className="min-h-screen">
+
         <Hero />
         <SeactionProduct />
         <SeactionDesc />
         <SeactionHome />
         <SeactionContact />
+      </div>
     </>
   )
 }
