@@ -140,15 +140,17 @@ export default function ProductTabsSection() {
   const paginatedData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
   return (
-    <div className="min-h-screen px-4 py-8 space-y-8">
-      {/* Tabs */}
-      <div className="flex justify-center gap-4">
+    <>
+      <section className="mt-16 mb-9">
+          <h1 className="text-xl md:text-[40px] font-normal text-[#CC424E] text-center">SẢN PHẨM RUBY HƯƠNG</h1>
+        </section>
+      <div className="hidden md:flex justify-center gap-7 mb-10">
         {tabs.map(tab => (
           <button
             key={tab}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition ${currentTab === tab
+            className={`px-4 py-3 rounded-full text-base font-semibold transition ${currentTab === tab
               ? "bg-black text-white"
-              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              : "text-[#2E333D] hover:bg-black hover:text-white"
               }`}
             onClick={() => {
               setCurrentTab(tab)
@@ -160,10 +162,9 @@ export default function ProductTabsSection() {
         ))}
       </div>
 
-      {/* Product Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
         {paginatedData.map((product, index) => (
-          <Link href={`/product/${product.slug}`}>
+          <Link href={`/product/${product.slug}`} key={index}>
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -180,18 +181,17 @@ export default function ProductTabsSection() {
                   className="object-cover"
                 />
               </div>
-              <p className="text-sm font-semibold">{product.name}</p>
+              <p className="text-base font-semibold text-[#15171B]">{product.name}</p>
             </motion.div>
           </Link>
         ))}
       </div>
 
-      {/* Pagination */}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={setCurrentPage}
       />
-    </div>
+    </>
   )
 }

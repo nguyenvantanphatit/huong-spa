@@ -32,7 +32,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
     const pages = getPages()
 
     return (
-        <div className="flex items-center justify-center gap-2 py-4">
+        <div className="flex items-center justify-center gap-2 pb-[80px] pt-16">
             <Button
                 variant="ghost"
                 size="icon"

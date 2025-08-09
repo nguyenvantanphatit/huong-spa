@@ -223,18 +223,14 @@ export default function ProductDetailPage() {
                 </div>
 
                 <div className="flex mt-[52px] justify-center">
-                    <Link
+                    {/* <Link
                         href="/product"
                         className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
             before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
             before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
             hover:before:w-full hover:border-transparent hover:text-white"
                     >
-                        <a
-                            href="https://m.me/amorthaomoc1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Nhắn tin qua Facebook"
+                        <button
                             className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
                                 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
                                 before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
@@ -244,8 +240,38 @@ export default function ProductDetailPage() {
                             <svg className="w-6 h-6 text-[#CC424E] " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
                             </svg>
-                        </a>
-                    </Link>
+                        </button>
+                    </Link> */}
+                     <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
+                        >
+                            <Link
+                                href="/product"
+                                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
+                            >
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-500 ease-in-out z-[-1] bg-[#CC424E]" />
+
+                                <svg
+                                    width="19"
+                                    height="18"
+                                    viewBox="0 0 19 18"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="relative z-10 fill-current transition-colors duration-300"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        clipRule="evenodd"
+                                        d="M0.541504 9C0.541504 4.51269 4.17919 0.875 8.6665 0.875H10.3332C10.5711 0.875 10.8067 0.885241 11.0397 0.905329C11.3836 0.934982 11.6383 1.23781 11.6087 1.58171C11.579 1.92561 11.2762 2.18036 10.9323 2.15071C10.735 2.1337 10.5352 2.125 10.3332 2.125H8.6665C4.86955 2.125 1.7915 5.20304 1.7915 9V13.1667C1.7915 14.6624 3.00407 15.875 4.49984 15.875H10.3332C14.1301 15.875 17.2082 12.797 17.2082 9C17.2082 8.798 17.1995 8.59817 17.1825 8.40087C17.1528 8.05697 17.4076 7.75414 17.7515 7.72449C18.0954 7.69483 18.3982 7.94958 18.4278 8.29348C18.4479 8.52646 18.4582 8.76211 18.4582 9C18.4582 13.4873 14.8205 17.125 10.3332 17.125H4.49984C2.31371 17.125 0.541504 15.3528 0.541504 13.1667V9ZM15.3332 2.125C14.2976 2.125 13.4582 2.96447 13.4582 4C13.4582 5.03553 14.2976 5.875 15.3332 5.875C16.3687 5.875 17.2082 5.03553 17.2082 4C17.2082 2.96447 16.3687 2.125 15.3332 2.125ZM12.2082 4C12.2082 2.27411 13.6073 0.875 15.3332 0.875C17.0591 0.875 18.4582 2.27411 18.4582 4C18.4582 5.72589 17.0591 7.125 15.3332 7.125C13.6073 7.125 12.2082 5.72589 12.2082 4Z"
+                                    />
+                                </svg>
+                                <span className="relative z-10 text-base">Liên hệ</span>
+                            </Link>
+                        </motion.div>
+
                 </div>
             </section>
 

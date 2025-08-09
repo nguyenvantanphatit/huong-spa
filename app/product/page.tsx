@@ -36,16 +36,10 @@ export default function BusinessPage() {
           })
         }}
       />
-
-      <div className="flex min-h-[calc(100vh-4rem)] flex-col">
-        <section className="mt-36 pb-[45px]">
-          <h1 className="text-xl md:text-[40px] font-medium text-[#CC424E] text-center">SẢN PHẨM RUBY HƯƠNG</h1>
-        </section>
-        <Container>
+        <div className="container px-6 mx-auto">
           <ProductTabsSection />
-        </Container>
+        </div>
         <SeactionContact />
-      </div >
     </>
   )
 }
