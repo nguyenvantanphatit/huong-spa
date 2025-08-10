@@ -37,7 +37,7 @@ export default function SeactionProduct() {
                                         alt={product.productName}
                                         width={320}
                                         height={320}
-                                        className="w-full h-[156px] md:h-[320px] object-cover rounded-[20p]"
+                                        className="w-full h-[156px] md:h-[320px] object-cover rounded-[20px]"
                                     />
                                     <div className="absolute inset-0 flex items-end justify-center pb-[30%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
                                         <button
