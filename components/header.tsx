@@ -11,6 +11,8 @@ import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === "/"
@@ -18,12 +20,26 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+
+      // Set scrolled state for background changes
+      setScrolled(currentScrollY > 20)
+
+      // Determine scroll direction and visibility with smoother thresholds
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        // Scrolling up or near top - show header
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY && currentScrollY > 150 && Math.abs(currentScrollY - lastScrollY) > 5) {
+        // Scrolling down, past threshold, and with sufficient scroll distance - hide header
+        setIsVisible(false)
+      }
+
+      setLastScrollY(currentScrollY)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   const menuItems = [
     { href: "/", label: "TRANG CHỦ" },
@@ -40,7 +56,9 @@ export default function Header() {
     return (
       <header
         className={cn(
-          "sticky top-0 left-0 right-0 z-50 transition-all duration-300 w-full",
+          "sticky top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out w-full",
+          // Transform based on visibility
+          isVisible ? "translate-y-0" : "-translate-y-full",
           // Background based on scroll
           scrolled
             ? isHome
@@ -193,7 +211,9 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 left-0 right-0 z-50 transition-all duration-300 w-full",
+        "sticky top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out w-full",
+        // Transform based on visibility
+        isVisible ? "translate-y-0" : "-translate-y-full",
         // Background based on scroll
         scrolled
           ? isHome

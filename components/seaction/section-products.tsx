@@ -142,8 +142,8 @@ export default function ProductTabsSection() {
   return (
     <>
       <section className="mt-16 mb-9">
-          <h1 className="text-xl md:text-[40px] font-normal text-[#CC424E] text-center">SẢN PHẨM RUBY HƯƠNG</h1>
-        </section>
+        <h1 className="text-xl md:text-[40px] font-normal text-[#CC424E] text-center">SẢN PHẨM RUBY HƯƠNG</h1>
+      </section>
       <div className="hidden md:flex justify-center gap-7 mb-10">
         {tabs.map(tab => (
           <button
@@ -177,8 +177,15 @@ export default function ProductTabsSection() {
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-lg group-hover:rounded-lg group-hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
+                <div className="absolute inset-0 flex items-end justify-center pb-[15%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                  <button
+                    className="relative flex items-center justify-center gap-2 py-3 px-6 font-semibold rounded-full whitespace-nowrap bg-[#CC424E] text-white overflow-hidden transition-all duration-300"
+                  >
+                    <span className="relative z-10 text-base font-semibold">Xem chi tiết</span>
+                  </button>
+                </div>
               </div>
               <p className="text-base font-semibold text-[#15171B]">{product.name}</p>
             </motion.div>

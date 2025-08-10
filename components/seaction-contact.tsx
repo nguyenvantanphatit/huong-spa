@@ -67,7 +67,7 @@ export default function SeactionContact() {
 
 
                             >
-                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-500 ease-in-out z-[-1] bg-[#CC424E]" />
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
 
                                 <svg
                                     width="25"
@@ -103,7 +103,7 @@ export default function SeactionContact() {
 
 
                             >
-                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-500 ease-in-out z-[-1] bg-[#CC424E]" />
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
 
                                 <svg
                                     width="19"
