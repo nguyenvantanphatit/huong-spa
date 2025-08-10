@@ -1,12 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import { Button } from '../ui/button'
 import Link from 'next/link'
 
 export default function SeactionDesc() {
   return (
     <>
-      <section className="my-[10px] md:my-2 py-5 md:py-10 px-1 md:px-4">
+      <section className="my-[10px] md:my-2 py-5 md:py-10 px-6 md:px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-[45px] items-center md:items-start">
           <div className="order-1 ">
             <Image
@@ -14,10 +13,10 @@ export default function SeactionDesc() {
               alt="Spa setting with lit candles and towels"
               width={475}
               height={590}
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              className="rounded-2xl shadow-lg w-full h-auto object-cover"
             />
           </div>
-          <div className="order-2  text-center md:text-left md:mt-9">
+          <div className="order-2 text-center md:text-left md:mt-9">
             <h3 className="text-3xl text-[20px] md:text-[38px] leading-[28px] md:leading-[48px] font-normal text-[#CC424E] mb-2 md:mb-6">CHẠM VÀO SỰ AN YÊN
               <br />TỪ BÊN TRONG
             </h3>

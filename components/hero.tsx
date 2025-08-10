@@ -11,7 +11,7 @@ export default async function Hero() {
 
   return (
     <section className="relative h-[600px] container mx-auto mt-10">
-      <div className="absolute inset-0 bg-[#FFEEE2]">
+      <div className="absolute inset-0 bg-[#FFEEE2] mx-5">
         <Image
           src={backgroundSrc}
           alt="Hero background"

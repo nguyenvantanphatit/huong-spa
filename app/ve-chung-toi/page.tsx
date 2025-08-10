@@ -46,7 +46,6 @@ export default async function AboutPage() {
           })
         }}
       />
-      <div className="flex min-h-[calc(100vh-4rem)] flex-col md:gap-8">
         <Container>
           <section className="mt-20 max-h-[606px]">
             {/* <Image
@@ -64,20 +63,19 @@ export default async function AboutPage() {
 
           <AnimatedAboutSection>
             <div className="flex flex-col justify-center gap-7 md:gap-10 text-center md:my-10">
-              <h6 className="text-xl text-[20px] md:text-[40px] leading-8 md:leading-[60px] font-normal text-[#CC424E] md:mt-10 md:pt-5 mt-4 uppercase">
+              <h6 className="text-xl md:text-[40px] leading-8 md:leading-[60px] font-normal text-[#CC424E] md:mt-10 md:pt-5 mt-4 uppercase">
                 không chỉ là spa
                 <span className="block">Mà là một hành trình</span>
               </h6>
-              <div className="flex flex-col md:flex-row gap-5 md:gap-[72px] text-[#2E333D] font-medium text-sm md:text-2xl max-w-[1284px] mx-auto  text-start md:text-center">
-                <div className="space-y-6 text-center md:text-justify">
+              <div className="flex items-start flex-col md:flex-row gap-5 md:gap-[72px] text-[#2E333D] font-medium text-sm md:text-xl max-w-[1284px] mx-auto text-start md:text-center">
+                <div className="text-center md:text-justify max-w-[560px]">
                   <p>Tôi là Hương – người phụ nữ từng lạc lối trong chính cuộc đời mình. Tôi từng thức trắng để tự hỏi liệu mình nên tiếp tục hay dừng lại. Từng nhìn vào gương, không nhận ra mình là ai – một người kiệt sức nhưng vẫn cố tỏ ra ổn. Nhưng rồi, tôi bắt đầu học cách sống chậm, chăm sóc từng hơi thở, từng tế bào trong cơ thể.</p>
                 </div>
-                <div className="space-y-6 text-center md:text-justify">
+                <div className="text-center md:text-justify max-w-[560px]">
                   <p>Ruby Hương Spa không phải là nơi để bạn "đẹp hơn" theo tiêu chuẩn ai đó. Nó là nơi để bạn được thở, được khóc nếu muốn, và được trở về là chính bạn. Là nơi tôi gieo từng ly trà, từng động tác chậm rãi – để nhắc nhở bạn rằng, bạn đủ đầy và xứng đáng được yêu thương.</p>
                 </div>
-              </div>
-
-              <div className=" flex flex-wrap md:flex-cols  justify-center gap-3 mt-3 md:mt-0">
+                </div>
+              <div className="flex items-center flex-wrap justify-center gap-3 mt-3 md:mt-0 max-w-[1284px] mx-auto">
                 <Link
                   href="/menu"
                   className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-12 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
@@ -183,7 +181,6 @@ export default async function AboutPage() {
           </div>
         </section>
         <SeactionContact />
-      </div>
     </>
   )
 }

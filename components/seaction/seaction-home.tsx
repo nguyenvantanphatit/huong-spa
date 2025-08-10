@@ -6,7 +6,7 @@ import Image from 'next/image'
 export default function SeactionHome() {
     return (
         <>
-            <section className="mt-[2px] md:mt-0 py-16">
+            <section className="py-16">
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-3 gap-[84px] md:gap-[136px] items-center">
                         <motion.div
@@ -39,7 +39,7 @@ export default function SeactionHome() {
                         </motion.div>
 
                         <motion.div
-                            className="text-center flex flex-col items-center justify-center mb-40"
+                            className="text-center flex flex-col items-center justify-center md:mb-40"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
@@ -50,7 +50,7 @@ export default function SeactionHome() {
                                 alt="Chăm sóc mái tóc"
                                 width={300}
                                 height={300}
-                                className="rounded-[20px] object-cover shrink-0"
+                                className="rounded-[20px] w-[240px] h-[240px] md:h-[300px] md:w-[300px]  object-cover shrink-0"
                             />
                             <p className="text-2xl font-semibold text-[#CC424E] pt-7 max-w-[252px]">
                                 Thải độc – Thanh lọc cơ thể 🌿
@@ -79,7 +79,7 @@ export default function SeactionHome() {
                                 alt="Chăm sóc mái tóc"
                                 width={300}
                                 height={300}
-                                className="rounded-[20px] object-cover shrink-0"
+                                className="rounded-[20px] w-[240px] h-[240px] md:h-[300px] md:w-[300px]  object-cover shrink-0"
                             />
                             <p className="text-2xl font-semibold text-[#CC424E] pt-7 max-w-[252px]">
                                 Không gian nghỉ dưỡng tinh thần 🌿
