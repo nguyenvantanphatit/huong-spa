@@ -40,7 +40,7 @@ export default function Header() {
     return (
       <header
         className={cn(
-          "sticky top-0 left-0 right-0 z-50 transition-all duration-300",
+          "sticky top-0 left-0 right-0 z-50 transition-all duration-300 w-full",
           // Background based on scroll
           scrolled
             ? isHome
@@ -193,7 +193,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 left-0 right-0 z-50 transition-all duration-300",
+        "sticky top-0 left-0 right-0 z-50 transition-all duration-300 w-full",
         // Background based on scroll
         scrolled
           ? isHome
@@ -202,9 +202,9 @@ export default function Header() {
           : "bg-transparent",
       )}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-10">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="relative w-32 h-10">
+          {/* <Link href="/" className="relative w-32 h-10">
             <Image
               src={isHome ? "/logo/logoHuongSpa.png" : "/logo/logoHuongSpa.png"}
               alt="Amor Spa"
@@ -212,9 +212,13 @@ export default function Header() {
               className="object-contain h-full w-full"
               priority
             />
-          </Link>
+          </Link> */}
 
           <div className="flex items-center space-x-[60px]">
+            <span className="text-[20px] font-bold text-[#CC424E]">LOGO</span>
+          </div>
+
+          <div className="flex text-sm items-center space-x-[60px]">
             {menuItems.map((item) => {
               const isActive = pathname === item.href
               return (
@@ -235,12 +239,12 @@ export default function Header() {
 
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-[#CC424E]">
-              <img src="/icon/mobile.png" alt="icon" />
+              <img className="h-6 w-6" src="/icon/mobile.png" alt="icon" />
               <a
                 href="tel:0902328566"
                 aria-label="Gọi điện thoại"
                 className={cn(
-                  "text-lg font-semibold",
+                  "text-base font-semibold",
                   isHome ? "text-[#2E333D]" : "text-[#2E333D]",
                   "hover:underline hover:underline-offset-2",
                 )}
@@ -259,12 +263,10 @@ export default function Header() {
               )}
             >
               <svg
-                width="19"
-                height="18"
                 viewBox="0 0 19 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="relative z-10 fill-current transition-colors duration-300 group-hover:fill-white"
+                className="relative w-6 h-6 z-10 fill-current transition-colors duration-300 group-hover:fill-white"
               >
                 <path
                   fillRule="evenodd"

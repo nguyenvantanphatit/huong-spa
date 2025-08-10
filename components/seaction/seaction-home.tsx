@@ -6,9 +6,9 @@ import Image from 'next/image'
 export default function SeactionHome() {
     return (
         <>
-            <section className="py-16">
+            <section className="mt-[2px] md:mt-0 py-16">
                 <div className="container mx-auto px-4">
-                    <div className="grid md:grid-cols-3 gap-8 items-center">
+                    <div className="grid md:grid-cols-3 gap-[84px] md:gap-[136px] items-center">
                         <motion.div
                             className="text-center flex flex-col items-center justify-center"
                             initial={{ opacity: 0, y: 50 }}
@@ -21,12 +21,12 @@ export default function SeactionHome() {
                                 alt="Chăm sóc mái tóc"
                                 width={300}
                                 height={300}
-                                className="rounded-[20px] object-cover shrink-0"
+                                className="rounded-[20px] w-[240px] h-[240px] md:h-[300px] md:w-[300px]  object-cover shrink-0"
                             />
-                            <p className="text-2xl font-semibold text-[#CC424E] pt-7 max-w-[252px]">
+                            <p className="text-2xl font-semibold text-[#CC424E] pt-6 md:pt-10 max-w-[252px]">
                                 Chăm sóc cho da dịu nhẹ 🌿
                             </p>
-                            <p className="text-[#26262F] mb-6 mt-4 md:text-lg max-w-[316px]">
+                            <p className="text-[#26262F] mb-5 md:mb-9 mt-3 md:mt-4 md:text-lg max-w-[316px]">
                                 Không chỉ dưỡng da, Ruby giúp bạn lắng nghe làn da như một người bạn thân.
                             </p>
                             <a
@@ -34,7 +34,7 @@ export default function SeactionHome() {
                                 aria-label="Gọi ngay"
                                 className="inline-flex w-[172px] items-center justify-center gap-2 py-3 px-10 font-semibold rounded-full whitespace-nowrap bg-[#CC424E] text-white border-2 border-transparent transition-all duration-500 ease-in-out transform hover:bg-transparent hover:border-[#CC424E] hover:text-[#CC424E] hover:scale-95"
                             >
-                                <span>Gọi ngay</span>
+                                <span>Liên hệ</span>
                             </a>
                         </motion.div>
 
@@ -63,7 +63,7 @@ export default function SeactionHome() {
                                 aria-label="Gọi ngay"
                                 className="inline-flex w-[172px] items-center justify-center gap-2 py-3 px-10 font-semibold rounded-full whitespace-nowrap bg-[#CC424E] text-white border-2 border-transparent transition-all duration-500 ease-in-out transform hover:bg-transparent hover:border-[#CC424E] hover:text-[#CC424E] hover:scale-95"
                             >
-                                <span>Gọi ngay</span>
+                                <span>Liên hệ</span>
                             </a>
                         </motion.div>
 

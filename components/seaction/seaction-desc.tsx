@@ -6,9 +6,9 @@ import Link from 'next/link'
 export default function SeactionDesc() {
   return (
     <>
-      <section className="py-12 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-11 items-center">
-          <div className="order-2 md:order-1">
+      <section className="my-[10px] md:my-2 py-5 md:py-10 px-1 md:px-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-[45px] items-center md:items-start">
+          <div className="order-1 ">
             <Image
               src="/pagehome/poic.png"
               alt="Spa setting with lit candles and towels"
@@ -17,15 +17,19 @@ export default function SeactionDesc() {
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </div>
-          <div className="order-1 md:order-2 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#CC424E] mb-6">CHẠM VÀO SỰ AN YÊN TỪ BÊN TRONG</h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Giữa nhịp sống hối hả, Ruby mang đến một khoảng lặng để bạn tìm về sự bình yên, nơi mọi lo toan tan biến, chỉ còn lại sự thư thái và an nhiên.
-            </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              Chúng tôi tin rằng, vẻ đẹp thật sự bắt đầu từ bên trong. Khi tâm hồn an lạc, một hạt từ yên lành, đến ánh mắt biết cười.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
+          <div className="order-2  text-center md:text-left md:mt-9">
+            <h3 className="text-3xl text-[20px] md:text-[38px] leading-[28px] md:leading-[48px] font-normal text-[#CC424E] mb-2 md:mb-6">CHẠM VÀO SỰ AN YÊN
+              <br />TỪ BÊN TRONG
+            </h3>
+            <div className="text-gray-600 text-[14px] md:text-[18px] leading-[24px] md:leading-[28px] font-normal">
+              <p className="text-gray-600 mb-5 md:mb-8">
+                Giữa nhịp sống hối hả, Ruby mang đến một khoảng lặng để bạn tìm về sự bình yên, nơi mọi lo toan tan biến, chỉ còn lại sự thư thái và an nhiên.
+              </p>
+              <p className="text-gray-600 mb-6 md:mb-9">
+                Chúng tôi tin rằng, vẻ đẹp thật sự bắt đầu từ bên trong. Khi tâm hồn an lạc, một hạt từ yên lành, đến ánh mắt biết cười.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 justify-start items-center">
               <Link
                 href="/menu"
                 className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
@@ -48,7 +52,7 @@ export default function SeactionDesc() {
                   />
                 </svg>
 
-                <span className="relative z-10 text-base">MENU</span>
+                <span className="relative z-10 text-base">View menu</span>
               </Link>
 
               <a
@@ -56,18 +60,16 @@ export default function SeactionDesc() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Nhắn tin qua Facebook"
-                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
-                                before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
+                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 bg-[#CC424E] border-[#CC424E] text-white overflow-hidden transition-all duration-300
+                                before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full
                                 before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-                                hover:before:w-full hover:border-transparent hover:text-white"
+                                hover:before:w-0 hover:bg-transparent hover:text-[#CC424E]"
               >
                 <svg
-                  width="19"
-                  height="18"
                   viewBox="0 0 19 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="relative z-10 fill-current transition-colors duration-300 group-hover:fill-white"
+                  className="relative z-10 h-6 w-6 fill-current transition-colors duration-300 group-hover:fill-[#CC424E]"
                 >
                   <path
                     fillRule="evenodd"

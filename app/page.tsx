@@ -36,7 +36,7 @@ export default function HomePage() {
           }),
         }}
       />
-      <div className="min-h-screen">
+      <div className="min-h-screen mx-5">
 
         <Hero />
         <SeactionProduct />

@@ -4,7 +4,7 @@ export default async function FooterSeaction() {
 
   return (
     <>
-      <footer className="border-t-[1px] mt-20"
+      <footer className="border-t-[1px]"
         style={{
           borderImageSource:
             'linear-gradient(162.67deg, rgba(167,54,255,0.25) 11.89%, rgba(117,46,206,0.25) 91.6%)',
@@ -20,47 +20,46 @@ export default async function FooterSeaction() {
               alt="Amor Logo"
             />
           </div> */}
-          <div className="flex justify-center mt-16">
-            <h1 className="text-base md:text-[60px] font-bold">RUBY HƯƠNG SPA</h1>
-
+          <div className="flex justify-center mt-5 md:mt-8">
+            <h1 className="text-base text-[24px] md:text-[60px] font-bold">RUBY HƯƠNG SPA</h1>
           </div>
 
           {/* Navigation */}
-          <nav className="flex items-center justify-center gap-8 md:gap-[60px] pt-[76px]">
+          <nav className="flex items-center justify-center gap-5 md:gap-[60px] pt-10 md:pt-[76px]">
             <Link href="/ve-chung-toi" className="tracking-widest text-xs md:text-base font-medium">VỀ RUBY HƯƠNG</Link>
             <Link href="/menu" className="tracking-widest text-xs md:text-base font-medium">MENU</Link>
             <Link href="/product" className="tracking-widest text-xs md:text-base font-medium">SẢN PHẨM</Link>
           </nav>
           {/* Info line */}
-          <div className="flex justify-center flex-col md:flex-row gap-10 mt-[52px]">
+          <div className="flex justify-center items-center flex-col md:flex-row gap-4 md:gap-16 mt-8 md:mt-[52px]">
             <div className="flex items-center gap-2">
-              <img src="/footer/address.svg" alt="Địa chỉ" />
-              <p className="text-[#2E333D] font-semibold text-xs md:text-base">89/57 đường 59, p14, TP.HCM</p>
+              <img className="w-6 h-6 md:w-8 md:h-8" src="/footer/address.svg" alt="Địa chỉ" />
+              <p className="text-[#2E333D] font-semibold text-xs md:text-base leading-5 md:leading-6">89/57 đường 59, p14, TP.HCM</p>
             </div>
             <div className="flex items-center gap-2">
-              <img src="/footer/time.svg" alt="Thời gian" />
-              <p className="text-[#2E333D] font-semibold text-xs md:text-base">09:00 - 20:00 mỗi ngày</p>
+              <img className="w-6 h-6 md:w-8 md:h-8" src="/footer/time.svg" alt="Thời gian" />
+              <p className="text-[#2E333D] font-semibold text-xs md:text-base leading-5 md:leading-6">09:00 - 20:00 mỗi ngày</p>
             </div>
             <div className="flex items-center gap-2">
-              <img src="/footer/phone.svg" alt="Điện thoại" />
-              <p className="text-[#2E333D] font-semibold text-xs md:text-base">0931 858 808</p>
+              <img className="w-6 h-6 md:w-8 md:h-8" src="/footer/phone.svg" alt="Điện thoại" />
+              <p className="text-[#2E333D] font-semibold text-xs md:text-base leading-5 md:leading-6">090 232 8566 - 090 879 7322</p>
             </div>
           </div>
 
-          <div className="flex items-center justify-center mt-[62px] gap-4">
-            <p className="text-xs md:text-sm">
-              ©2025 AMOR, all rights reserved, powered by{" "}
+          <div className="flex items-center justify-center mt-8 md:mt-[62px] gap-4">
+            <p className="text-[10px] leading-4 md:leading-5 md:text-[12px]">
+              ©2025 RUBY Hương, all rights reserved, powered by{" "}
               <a href="https://www.mera-tech.vn" target="_blank" className="hover:underline">MERA TECH</a>
             </p>
             <div className="flex">
               <a href="https://www.facebook.com/amorthaomoc1" target="_blank" rel="noopener noreferrer">
-                <img src="/icon/fb.svg" alt="Facebook" />
+                <img className="hidden md:block" src="/icon/fb.svg" alt="Facebook" />
               </a>
               <a href="https://m.me/amorthaomoc1" target="_blank" rel="noopener noreferrer">
-                <img src="/icon/mess.svg" alt="Messenger" />
+                <img className="hidden md:block" src="/icon/mess.svg" alt="Messenger" />
               </a>
               <a href="https://zalo.me/0902328566" target="_blank" rel="noopener noreferrer">
-                <img src="/icon/zalo.svg" alt="Zalo" />
+                <img className="hidden md:block" src="/icon/zalo.svg" alt="Zalo" />
               </a>
             </div>
           </div>
