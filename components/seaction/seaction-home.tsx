@@ -32,8 +32,9 @@ export default function SeactionHome() {
                             <a
                                 href="tel:0902328566"
                                 aria-label="Gọi ngay"
-                                className="inline-flex w-[172px] items-center justify-center gap-2 py-3 px-10 font-semibold rounded-full whitespace-nowrap bg-[#CC424E] text-white border-2 border-transparent transition-all duration-500 ease-in-out transform hover:bg-transparent hover:border-[#CC424E] hover:text-[#CC424E] hover:scale-95"
+                                className="group relative inline-flex w-[172px] items-center justify-center gap-2 py-3 px-14 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                             >
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
                                 <span>Liên hệ</span>
                             </a>
                         </motion.div>
@@ -61,8 +62,9 @@ export default function SeactionHome() {
                             <a
                                 href="tel:0902328566"
                                 aria-label="Gọi ngay"
-                                className="inline-flex w-[172px] items-center justify-center gap-2 py-3 px-10 font-semibold rounded-full whitespace-nowrap bg-[#CC424E] text-white border-2 border-transparent transition-all duration-500 ease-in-out transform hover:bg-transparent hover:border-[#CC424E] hover:text-[#CC424E] hover:scale-95"
+                                className="group relative inline-flex w-[172px] items-center justify-center gap-2 py-3 px-14 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                             >
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
                                 <span>Liên hệ</span>
                             </a>
                         </motion.div>
@@ -90,9 +92,10 @@ export default function SeactionHome() {
                             <a
                                 href="tel:0902328566"
                                 aria-label="Gọi ngay"
-                                className="inline-flex w-[172px] items-center justify-center gap-2 py-3 px-10 font-semibold rounded-full whitespace-nowrap bg-[#CC424E] text-white border-2 border-transparent transition-all duration-500 ease-in-out transform hover:bg-transparent hover:border-[#CC424E] hover:text-[#CC424E] hover:scale-95"
+                                className="group relative inline-flex w-[172px] items-center justify-center gap-2 py-3 px-14 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                             >
-                                <span>Gọi ngay</span>
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
+                                <span>Liên hệ</span>
                             </a>
                         </motion.div>
                     </div>

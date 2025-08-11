@@ -31,11 +31,9 @@ export default function SeactionDesc() {
             <div className="flex flex-col sm:flex-row gap-3 justify-start items-center">
               <Link
                 href="/menu"
-                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
-            before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
-            before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-            hover:before:w-full hover:border-transparent hover:text-white"
+                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
               >
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
                 <svg
                   width="25"
                   height="24"
@@ -59,11 +57,9 @@ export default function SeactionDesc() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Nhắn tin qua Facebook"
-                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 bg-[#CC424E] border-[#CC424E] text-white overflow-hidden transition-all duration-300
-                                before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full
-                                before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-                                hover:before:w-0 hover:bg-transparent hover:text-[#CC424E]"
+                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
               >
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
                 <svg
                   viewBox="0 0 19 18"
                   fill="none"

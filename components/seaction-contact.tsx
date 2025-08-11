@@ -99,19 +99,13 @@ export default function SeactionContact() {
                                 rel="noopener noreferrer"
                                 aria-label="Nhắn tin qua Facebook"
                                 className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
-
-
-
                             >
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
-
                                 <svg
-                                    width="19"
-                                    height="18"
                                     viewBox="0 0 19 18"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="relative z-10 fill-current transition-colors duration-300"
+                                    className="relative z-10 h-6 w-6 fill-current transition-colors duration-300 group-hover:fill-[#CC424E]"
                                 >
                                     <path
                                         fillRule="evenodd"

@@ -27,7 +27,7 @@ export default async function Hero() {
 
       <div className="relative container mx-auto px-[60px] md:px-20 h-full flex flex-col justify-center">
         <div className="relative z-10 max-w-4xl mt-12 md:mt-0">
-          <p className="font-montserrat text-base text-[32px] md:text-[60px] leading-[38px] md:leading-[24px] font-bold  tracking-[1.2px] text-center md:text-start text-white mb-[18px] md:mb-8">
+          <p className="font-montserrat text-[32px] md:text-[60px] leading-[38px] md:leading-[24px] font-bold  tracking-[1.2px] text-center md:text-start text-white mb-[18px] md:mb-8">
             Ruby Hương Spa
           </p>
           <h3 className="font-trajan text-[20px] md:text-[28px] leading-[32px] md:leading-[68px]  tracking-[6.72px] font-normal text-center md:text-start text-white uppercase mb-[58px] md:mb-7">
@@ -36,11 +36,9 @@ export default async function Hero() {
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-start items-center">
             <Link
               href="/menu"
-              className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 bg-[#CC424E] border-[#CC424E] text-white overflow-hidden transition-all duration-300
-              before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full
-              before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-              hover:before:w-0 hover:bg-transparent hover:text-[#CC424E]"
+              className="group relative inline-flex w-[220px] h-14 items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
             >
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
               <svg
                 width="24"
                 height="24"
@@ -64,16 +62,14 @@ export default async function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Nhắn tin qua Facebook"
-              className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 bg-[#CC424E] border-[#CC424E] text-white overflow-hidden transition-all duration-300
-                                before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full
-                                before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-                                hover:before:w-0 hover:bg-transparent hover:text-[#CC424E]"
+              className="group relative inline-flex w-[220px] h-14 items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
             >
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
               <svg
                 viewBox="0 0 19 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="relative z-10 w-6 h-6 fill-current transition-colors duration-300 group-hover:fill-[#CC424E]"
+                className="flex-shrink-0 w-6 h-6 z-10 fill-current transition-colors duration-300"
               >
                 <path
                   fillRule="evenodd"
