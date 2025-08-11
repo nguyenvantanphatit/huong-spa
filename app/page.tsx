@@ -36,11 +36,11 @@ export default function HomePage() {
           }),
         }}
       />
-        <Hero />
-        <SeactionProduct />
-        <SeactionDesc />
-        <SeactionHome />
-        <SeactionContact />
+      <Hero />
+      <SeactionProduct />
+      <SeactionDesc />
+      <SeactionHome />
+      <SeactionContact />
     </>
   )
 }

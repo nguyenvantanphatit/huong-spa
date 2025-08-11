@@ -1,45 +1,46 @@
 import Image from 'next/image'
 import React from 'react'
-import { Button } from '../ui/button'
 import Link from 'next/link'
 
 export default function SeactionDesc() {
   return (
     <>
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-11 items-center">
-          <div className="order-2 md:order-1">
+      <section className="my-[10px] md:my-2 py-5 md:py-10 px-6 md:px-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-[45px] items-center md:items-start">
+          <div className="order-1 ">
             <Image
               src="/pagehome/poic.png"
               alt="Spa setting with lit candles and towels"
               width={475}
               height={590}
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              className="rounded-2xl shadow-lg w-full h-auto object-cover"
             />
           </div>
-          <div className="order-1 md:order-2 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#CC424E] mb-6">CHẠM VÀO SỰ AN YÊN TỪ BÊN TRONG</h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Giữa nhịp sống hối hả, Ruby mang đến một khoảng lặng để bạn tìm về sự bình yên, nơi mọi lo toan tan biến, chỉ còn lại sự thư thái và an nhiên.
-            </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              Chúng tôi tin rằng, vẻ đẹp thật sự bắt đầu từ bên trong. Khi tâm hồn an lạc, một hạt từ yên lành, đến ánh mắt biết cười.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-start items-center">
+          <div className="order-2 text-center md:text-left md:mt-9">
+            <h3 className="text-3xl text-[20px] md:text-[38px] leading-[28px] md:leading-[48px] font-normal text-[#CC424E] mb-2 md:mb-6">CHẠM VÀO SỰ AN YÊN
+              <br />TỪ BÊN TRONG
+            </h3>
+            <div className="text-gray-600 text-[14px] md:text-[18px] leading-[24px] md:leading-[28px] font-normal">
+              <p className="text-gray-600 mb-5 md:mb-8">
+                Giữa nhịp sống hối hả, Ruby mang đến một khoảng lặng để bạn tìm về sự bình yên, nơi mọi lo toan tan biến, chỉ còn lại sự thư thái và an nhiên.
+              </p>
+              <p className="text-gray-600 mb-6 md:mb-9">
+                Chúng tôi tin rằng, vẻ đẹp thật sự bắt đầu từ bên trong. Khi tâm hồn an lạc, một hạt từ yên lành, đến ánh mắt biết cười.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 justify-start items-center">
               <Link
                 href="/menu"
-                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-white text-white overflow-hidden transition-all duration-300
-            before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
-            before:bg-white before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-            hover:before:w-full hover:border-transparent hover:text-[#824435]"
+                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
               >
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
                 <svg
                   width="25"
                   height="24"
                   viewBox="0 0 25 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="relative z-10 fill-current transition-colors duration-300 group-hover:text-[#824435]"
+                  className="relative z-10 fill-current transition-colors duration-300 group-hover:fill-white"
                 >
                   <path
                     fillRule="evenodd"
@@ -48,7 +49,7 @@ export default function SeactionDesc() {
                   />
                 </svg>
 
-                <span className="relative z-10 text-base">MENU</span>
+                <span className="relative z-10 text-base">View menu</span>
               </Link>
 
               <a
@@ -56,27 +57,22 @@ export default function SeactionDesc() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Nhắn tin qua Facebook"
-                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-white text-white overflow-hidden transition-all duration-300
-                                before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
-                                before:bg-white before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-                                hover:before:w-full hover:border-transparent hover:text-[#824435]"
+                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
               >
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
                 <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 19 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="relative z-10 transition-colors duration-300 group-hover:fill-white"
+                  className="relative z-10 h-6 w-6 fill-current transition-colors duration-300 group-hover:fill-[#CC424E]"
                 >
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
-                    d="M1.25 12C1.25 6.61522 5.61522 2.25 11 2.25H13C18.3848 2.25 22.75 6.61522 22.75 12C22.75 17.3848 18.3848 21.75 13 21.75H6C3.37665 21.75 1.25 19.6234 1.25 17V12ZM11 3.75C6.44365 3.75 2.75 7.44365 2.75 12V17C2.75 18.7949 4.20507 20.25 6 20.25H13C17.5564 20.25 21.25 16.5563 21.25 12C21.25 7.44365 17.5564 3.75 13 3.75H11ZM7.25 10C7.25 9.58579 7.58579 9.25 8 9.25H16C16.4142 9.25 16.75 9.58579 16.75 10C16.75 10.4142 16.4142 10.75 16 10.75H8C7.58579 10.75 7.25 10.4142 7.25 10ZM7.25 14C7.25 13.5858 7.58579 13.25 8 13.25H12C12.4142 13.25 12.75 13.5858 12.75 14C12.75 14.4142 12.4142 14.75 12 14.75H8C7.58579 14.75 7.25 14.4142 7.25 14Z"
-                    fill="currentColor"
+                    d="M0.541504 9C0.541504 4.51269 4.17919 0.875 8.6665 0.875H10.3332C10.5711 0.875 10.8067 0.885241 11.0397 0.905329C11.3836 0.934982 11.6383 1.23781 11.6087 1.58171C11.579 1.92561 11.2762 2.18036 10.9323 2.15071C10.735 2.1337 10.5352 2.125 10.3332 2.125H8.6665C4.86955 2.125 1.7915 5.20304 1.7915 9V13.1667C1.7915 14.6624 3.00407 15.875 4.49984 15.875H10.3332C14.1301 15.875 17.2082 12.797 17.2082 9C17.2082 8.798 17.1995 8.59817 17.1825 8.40087C17.1528 8.05697 17.4076 7.75414 17.7515 7.72449C18.0954 7.69483 18.3982 7.94958 18.4278 8.29348C18.4479 8.52646 18.4582 8.76211 18.4582 9C18.4582 13.4873 14.8205 17.125 10.3332 17.125H4.49984C2.31371 17.125 0.541504 15.3528 0.541504 13.1667V9ZM15.3332 2.125C14.2976 2.125 13.4582 2.96447 13.4582 4C13.4582 5.03553 14.2976 5.875 15.3332 5.875C16.3687 5.875 17.2082 5.03553 17.2082 4C17.2082 2.96447 16.3687 2.125 15.3332 2.125ZM12.2082 4C12.2082 2.27411 13.6073 0.875 15.3332 0.875C17.0591 0.875 18.4582 2.27411 18.4582 4C18.4582 5.72589 17.0591 7.125 15.3332 7.125C13.6073 7.125 12.2082 5.72589 12.2082 4Z"
                   />
                 </svg>
-                <span className="relative z-10 text-base">BOOKING</span>
+                <span className="relative z-10 text-base">Liên hệ</span>
               </a>
             </div>
           </div>

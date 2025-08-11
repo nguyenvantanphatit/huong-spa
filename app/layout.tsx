@@ -161,7 +161,7 @@ export default function RootLayout({
         />
       </head>
       <body className={montserrat.className}>
-         <Header />
+        <Header />
         {children}
         <FooterSeaction />
       </body>
