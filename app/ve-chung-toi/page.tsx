@@ -169,7 +169,7 @@ export default async function AboutPage() {
                 </div>
                 <div className="absolute right-0 -bottom-7 col-span-2 transform  z-10">
                   <Image
-                    src="/about/Photo.png"
+                    src="/about/Photo.svg"
                     alt="Ty Anh Nguyen"
                     width={384}
                     height={502}

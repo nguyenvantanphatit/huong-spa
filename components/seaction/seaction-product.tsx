@@ -69,10 +69,7 @@ export default function SeactionProduct() {
                 </div>
                 <div className="flex justify-center mt-7 md:mt-[34px]">
                     <a
-                        href="https://m.me/amorthaomoc1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Nhắn tin qua Facebook"
+                        href="product/"
                         className="group relative inline-flex w-[220px] h-14 items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
                     >
                         <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
