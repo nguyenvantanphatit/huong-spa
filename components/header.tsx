@@ -28,13 +28,13 @@ export default function Header() {
       const currentScrollY = window.scrollY
 
       // Set scrolled state for background changes
-      setScrolled(currentScrollY > 20)
+      setScrolled(currentScrollY > 25)
 
       // Determine scroll direction and visibility with smoother thresholds
       if (currentScrollY < lastScrollY || currentScrollY < 10) {
         // Scrolling up or near top - show header
         setIsVisible(true)
-      } else if (currentScrollY > lastScrollY && currentScrollY > 150 && Math.abs(currentScrollY - lastScrollY) > 5) {
+      } else if (currentScrollY > lastScrollY && currentScrollY > 150 && Math.abs(currentScrollY - lastScrollY) > 1) {
         // Scrolling down, past threshold, and with sufficient scroll distance - hide header
         setIsVisible(false)
       }
