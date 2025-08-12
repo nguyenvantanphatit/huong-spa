@@ -112,7 +112,7 @@ export default function Header() {
               <SheetTrigger asChild>
                 <div className="flex items-center justify-center gap-4">
                   <a
-                    href="https://m.me/amorthaomoc1"
+                    href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Nhắn tin qua Facebook"
@@ -208,7 +208,7 @@ export default function Header() {
                     <span className="text-lg font-semibold text-[#CC424E]">090 232 8566</span>
                   </a>
                   <a
-                    href="https://m.me/amorthaomoc1"
+                    href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Nhắn tin qua Facebook"
@@ -259,7 +259,7 @@ export default function Header() {
             <span className="text-[20px] font-bold text-[#CC424E]">LOGO</span>
           </div>
 
-          <div className="flex text-sm font-normal items-center space-x-[60px]">
+          {/* <div className="flex text-sm font-normal items-center space-x-[60px]">
             {menuItems.map((item) => {
               const isActive = pathname === item.href
               return (
@@ -276,10 +276,32 @@ export default function Header() {
                 </Link>
               )
             })}
+          </div> */}
+
+          <div className="flex text-sm font-normal items-center space-x-[60px]">
+            {menuItems.map((item) => {
+              const isActive = pathname === item.href
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "group relative inline-flex items-center justify-center gap-2 py-2 px-4 font-normal rounded-full whitespace-nowrap overflow-hidden transition-colors",
+                    "hover:text-[#2E333D] hover:bg-transparent hover:border-transparent",
+                    isHome ? "text-[#2E333D]" : "text-[#2E333D] hover:text-[#2E333D]",
+                    isActive && (isHome ? "font-semibold" : "text-[#15171B] text-base font-semibold"),
+                  )}
+                >
+                  {item.label}
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
+                </Link>
+              )
+            })}
           </div>
 
+
           <div className="flex items-center space-x-5">
-            <div className="flex items-center space-x-1 text-[#CC424E]">
+            <div className="flex items-center space-x-1 text-[#CC424E] ">
               <svg className="w-6 h-6" width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M4.68115 6.20661C4.68115 3.92543 6.53041 2.07617 8.81159 2.07617H17.6232C19.9044 2.07617 21.7536 3.92543 21.7536 6.20661V21.6269C21.7536 23.9081 19.9044 25.7573 17.6232 25.7573H8.81159C6.53041 25.7573 4.68115 23.9081 4.68115 21.6269V6.20661ZM8.81159 3.72835C7.44288 3.72835 6.33333 4.8379 6.33333 6.20661V21.6269C6.33333 22.9956 7.44288 24.1052 8.81159 24.1052H17.6232C18.9919 24.1052 20.1014 22.9956 20.1014 21.6269V6.20661C20.1014 4.8379 18.9919 3.72835 17.6232 3.72835H8.81159Z" fill="#2E333D" />
                 <path fillRule="evenodd" clipRule="evenodd" d="M11.2896 21.6269C11.2896 21.1706 11.6594 20.8008 12.1156 20.8008H14.3185C14.7748 20.8008 15.1446 21.1706 15.1446 21.6269C15.1446 22.0831 14.7748 22.453 14.3185 22.453H12.1156C11.6594 22.453 11.2896 22.0831 11.2896 21.6269Z" fill="#2E333D" />
@@ -297,7 +319,7 @@ export default function Header() {
               </a>
             </div>
             <a
-              href="https://m.me/amorthaomoc1"
+              href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Nhắn tin qua Facebook"

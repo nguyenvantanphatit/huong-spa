@@ -2,21 +2,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import AnimateOnScroll from './animations/AnimateOnScroll'
 
 export default function SeactionContact() {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-        >
+        <AnimateOnScroll>
             <div className="flex flex-col md:flex-row items-center max-w-[1200px] container gap-5 md:gap-[30px] px-6 md:py-10 mt-4 md:mt-6 mb-[48px] md:mb-5 mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                <AnimateOnScroll
+                    delay={0.2}
                     className="flex justify-center items-center md:w-[434px] md:h-[433px] md:shrink-0"
                 >
                     <Image
@@ -26,13 +19,10 @@ export default function SeactionContact() {
                         height={433}
                         className="object-cover"
                     />
-                </motion.div>
+                </AnimateOnScroll>
 
-                <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
+                <AnimateOnScroll
+                    delay={0.4}
                 >
                     <h2 className="hidden md:block text-xl md:text-[34px] md:leading-[48px] font-normal text-[#CC424E] mb-4 uppercase">
                         Đặt lịch ngay hôm nay để
@@ -44,21 +34,15 @@ export default function SeactionContact() {
                         <br />
                         <span className="block md:mt-1.5">cảm nhận 🌿</span>
                     </h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
+                    <AnimateOnScroll
+                        delay={0.6}
                         className="text-[#2E333D] mb-6 md:mb-10 text-center md:text-start max-w-[680px] text-sm md:text-base"
                     >
                         Hãy cho mình một buổi chiều thật khác – không điện thoại, không vội vàng – chỉ có bạn, hương thảo mộc dịu nhẹ, và đôi bàn tay chăm sóc đầy ân cần.
-                    </motion.p>
+                    </AnimateOnScroll>
                     <div className="flex flex-col sm:flex-row gap-3 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.6, ease: 'easeInOut' }}
+                        <AnimateOnScroll
+                            delay={0.8}
                         >
                             <Link
                                 href="/menu"
@@ -86,15 +70,12 @@ export default function SeactionContact() {
                                 <span className="relative z-10 text-base font-semibold">Xem Menu</span>
 
                             </Link>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
+                        </AnimateOnScroll>
+                        <AnimateOnScroll
+                            delay={1}
                         >
                             <a
-                                href="https://m.me/amorthaomoc1"
+                                href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Nhắn tin qua Facebook"
@@ -105,7 +86,7 @@ export default function SeactionContact() {
                                     viewBox="0 0 19 18"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="relative z-10 h-6 w-6 fill-current transition-colors duration-300 group-hover:fill-[#CC424E]"
+                                    className="relative z-10 h-6 w-6 fill-current transition-colors duration-300"
                                 >
                                     <path
                                         fillRule="evenodd"
@@ -115,11 +96,11 @@ export default function SeactionContact() {
                                 </svg>
                                 <span className="relative z-10 text-base font-semibold">Liên hệ ngay</span>
                             </a>
-                        </motion.div>
+                        </AnimateOnScroll>
 
                     </div>
-                </motion.div>
+                </AnimateOnScroll>
             </div>
-        </motion.div>
+        </AnimateOnScroll>
     )
 }
