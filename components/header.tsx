@@ -287,8 +287,8 @@ export default function Header() {
                   href={item.href}
                   className={cn(
                     "group relative inline-flex items-center justify-center gap-2 py-2 px-4 font-normal rounded-full whitespace-nowrap overflow-hidden transition-colors",
-                    "hover:text-[#2E333D] hover:bg-transparent hover:border-transparent",
-                    isHome ? "text-[#2E333D]" : "text-[#2E333D] hover:text-[#2E333D]",
+                    "hover:text-[#CC424E] hover:bg-transparent hover:border-transparent",
+                    isHome ? "text-[#2E333D]" : "text-[#2E333D] hover:text-[#CC424E]",
                     isActive && (isHome ? "font-semibold" : "text-[#15171B] text-base font-semibold"),
                   )}
                 >
@@ -298,6 +298,7 @@ export default function Header() {
               )
             })}
           </div>
+
 
 
           <div className="flex items-center space-x-5">
