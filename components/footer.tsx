@@ -26,9 +26,34 @@ export default async function FooterSeaction() {
 
           {/* Navigation */}
           <nav className="flex items-center justify-center gap-5 md:gap-[60px] pt-10 md:pt-[76px]">
-            <Link href="/ve-chung-toi" className="tracking-widest text-xs md:text-base font-medium">VỀ RUBY HƯƠNG</Link>
-            <Link href="/menu" className="tracking-widest text-xs md:text-base font-medium">MENU</Link>
-            <Link href="/product" className="tracking-widest text-xs md:text-base font-medium">SẢN PHẨM</Link>
+            <Link
+              href="/ve-chung-toi"
+              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors"
+            >
+              VỀ RUBY HƯƠNG
+              <div
+                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white"
+              />
+            </Link>
+
+            <Link
+              href="/menu"
+              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors"
+            >
+              MENU
+              <div
+                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white"
+              />
+            </Link>
+
+            <Link
+              href="/product"
+              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors">
+              SẢN PHẨM
+              <div
+                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white"
+              />
+            </Link>
           </nav>
           {/* Info line */}
           <div className="flex justify-center items-center flex-col md:flex-row gap-4 md:gap-16 mt-8 md:mt-[52px]">
@@ -42,7 +67,7 @@ export default async function FooterSeaction() {
             </div>
             <div className="flex items-center gap-2">
               <img className="w-6 h-6 md:w-8 md:h-8" src="/footer/phone.svg" alt="Điện thoại" />
-              <p className="text-[#2E333D] font-semibold text-xs md:text-base leading-5 md:leading-6">090 232 8566 - 090 879 7322</p>
+              <p className="text-[#2E333D] font-semibold text-xs md:text-base leading-5 md:leading-6">0931858808</p>
             </div>
           </div>
 
@@ -52,20 +77,19 @@ export default async function FooterSeaction() {
               <a href="https://www.mera-tech.vn" target="_blank" className="hover:underline">MERA TECH</a>
             </p>
             <div className="flex">
-              <a href="https://www.facebook.com/amorthaomoc1" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
                 <img className="hidden md:block" src="/icon/fb.svg" alt="Facebook" />
               </a>
-              <a href="https://m.me/amorthaomoc1" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
                 <img className="hidden md:block" src="/icon/mess.svg" alt="Messenger" />
               </a>
-              <a href="https://zalo.me/0902328566" target="_blank" rel="noopener noreferrer">
+              <a href="https://zalo.me/0931858808" target="_blank" rel="noopener noreferrer">
                 <img className="hidden md:block" src="/icon/zalo.svg" alt="Zalo" />
               </a>
             </div>
           </div>
         </Container>
       </footer>
-
     </>
   )
 }

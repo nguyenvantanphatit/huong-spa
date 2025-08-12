@@ -172,20 +172,27 @@ export default function ProductTabsSection() {
               viewport={{ once: true }}
               className="group space-y-2"
             >
-              <div className="relative aspect-square overflow-hidden rounded-lg">
+              <div className="relative group/card aspect-square overflow-hidden rounded-lg">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
                   className="object-cover rounded-lg group-hover:rounded-lg group-hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
-                <div className="absolute inset-0 flex items-end justify-center pb-[15%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                <div className="absolute inset-0 flex items-end justify-center pb-[10%] opacity-0 translate-y-4 
+                        group-hover/card:opacity-100 group-hover/card:translate-y-0 
+                        transition-all duration-300 ease-in-out">
                   <button
-                    className="relative flex items-center justify-center gap-2 py-3 px-6 font-semibold rounded-full whitespace-nowrap bg-[#CC424E] text-white overflow-hidden transition-all duration-300"
+                    className="group/btn relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                   >
+                    {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 
+                            group-hover/btn:-translate-y-1/2 
+                            transition-transform duration-300 ease-in-out z-[-1] bg-white" />
                     <span className="relative z-10 text-base font-semibold">Xem chi tiết</span>
                   </button>
                 </div>
+
               </div>
               <p className="text-base font-semibold text-[#15171B]">{product.name}</p>
             </motion.div>

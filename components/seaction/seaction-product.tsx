@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { motion } from 'framer-motion'
+import AnimateOnScroll from '../animations/AnimateOnScroll'
 
 export default function SeactionProduct() {
 
@@ -46,7 +47,7 @@ export default function SeactionProduct() {
                   group-hover/card:opacity-100 group-hover/card:translate-y-0 
                   transition-all duration-300 ease-in-out">
                                         <button
-                                            className="group/btn relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
+                                            className="hidden md:inline-flex group/btn relative w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                                         >
                                             {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
                                             <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 
@@ -56,29 +57,33 @@ export default function SeactionProduct() {
                                         </button>
                                     </div>
 
-                                    <div className="mt-2 md:mt-4 text-center md:text-start">
-                                        <h3 className="text-xs md:text-lg h-5 md:h-[30px] font-semibold text-gray-800">
-                                            {product.productName}
-                                        </h3>
-                                    </div>
+                                    <AnimateOnScroll delay={0.6}>
+                                        <div className="mt-2 md:mt-4 text-center md:text-start">
+                                            <h3 className="text-xs md:text-lg h-5 md:h-[30px] font-semibold text-gray-800">
+                                                {product.productName}
+                                            </h3>
+                                        </div>
+                                    </AnimateOnScroll>
                                 </div>
-
                             </motion.div>
                         </Link>
                     ))}
                 </div>
-                <div className="flex justify-center mt-7 md:mt-[34px]">
-                    <Link
-                        href="product/"
-                        className="group relative inline-flex w-[220px] h-14 items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
-                    >
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
-                        <span className="relative z-10 text-[14px] md:text-base">Xem tất cả</span>
-                        <svg className="relative w-5 h-5 md:h-6 md:w-6 z-10 transition-colors duration-300]" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M19.0303 11.4697C19.3232 11.7626 19.3232 12.2374 19.0303 12.5303L15.0303 16.5303C14.7374 16.8232 14.2626 16.8232 13.9697 16.5303C13.6768 16.2374 13.6768 15.7626 13.9697 15.4697L16.6893 12.75L6.5 12.75C6.08579 12.75 5.75 12.4142 5.75 12C5.75 11.5858 6.08579 11.25 6.5 11.25L16.6893 11.25L13.9697 8.53033C13.6768 8.23744 13.6768 7.76256 13.9697 7.46967C14.2626 7.17678 14.7374 7.17678 15.0303 7.46967L19.0303 11.4697Z" fill="currentColor" />
-                        </svg>
-                    </Link>
-                </div>
+
+                <AnimateOnScroll delay={1}>
+                    <div className="flex justify-center mt-7 md:mt-[34px]">
+                        <Link
+                            href="/product"
+                            className="group relative inline-flex w-[220px] h-14 items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
+                        >
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
+                            <span className="relative z-10 text-[14px] md:text-base">Xem tất cả</span>
+                            <svg className="relative w-5 h-5 md:h-6 md:w-6 z-10 transition-colors duration-300]" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M19.0303 11.4697C19.3232 11.7626 19.3232 12.2374 19.0303 12.5303L15.0303 16.5303C14.7374 16.8232 14.2626 16.8232 13.9697 16.5303C13.6768 16.2374 13.6768 15.7626 13.9697 15.4697L16.6893 12.75L6.5 12.75C6.08579 12.75 5.75 12.4142 5.75 12C5.75 11.5858 6.08579 11.25 6.5 11.25L16.6893 11.25L13.9697 8.53033C13.6768 8.23744 13.6768 7.76256 13.9697 7.46967C14.2626 7.17678 14.7374 7.17678 15.0303 7.46967L19.0303 11.4697Z" fill="currentColor" />
+                            </svg>
+                        </Link>
+                    </div>
+                </AnimateOnScroll>
             </section>
 
         </>

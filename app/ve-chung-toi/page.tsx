@@ -8,6 +8,7 @@ import Script from "next/script";
 import { cookies } from "next/headers";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import AnimateOnScroll from "@/components/animations/AnimateOnScroll";
 
 export const metadata: Metadata = {
   title: "Về Chúng Tôi | AMOR THẢO MỘC",
@@ -62,21 +63,31 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <AnimatedAboutSection>
-          <div className="flex flex-col justify-center gap-7 md:gap-10 text-center md:my-10">
-            <h6 className="text-xl md:text-[40px] leading-8 md:leading-[60px] font-normal text-[#CC424E] md:mt-10 md:pt-5 mt-4 uppercase">
-              không chỉ là spa
-              <span className="block">Mà là một hành trình</span>
-            </h6>
-            <div className="flex items-start flex-col md:flex-row gap-5 md:gap-[72px] text-[#2E333D] font-medium text-sm md:text-xl max-w-[1284px] mx-auto">
+        <div className="flex flex-col justify-center gap-7 md:gap-10 text-center md:my-10">
+
+          <h6 className="text-xl md:text-[40px] leading-8 md:leading-[60px] font-normal text-[#CC424E] md:mt-10 md:pt-5 mt-4 uppercase">
+            không chỉ là spa
+            <span className="block">Mà là một hành trình</span>
+          </h6>
+
+          <div className="flex items-start flex-col md:flex-row gap-5 md:gap-[72px] text-[#2E333D] font-medium text-sm md:text-xl max-w-[1284px] mx-auto">
+
+            <AnimateOnScroll delay={0.2}>
               <div className="text-center md:text-justify max-w-[560px]">
                 <p>Tôi là Hương – người phụ nữ từng lạc lối trong chính cuộc đời mình. Tôi từng thức trắng để tự hỏi liệu mình nên tiếp tục hay dừng lại. Từng nhìn vào gương, không nhận ra mình là ai – một người kiệt sức nhưng vẫn cố tỏ ra ổn. Nhưng rồi, tôi bắt đầu học cách sống chậm, chăm sóc từng hơi thở, từng tế bào trong cơ thể.</p>
               </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={0.4}>
               <div className="text-center md:text-justify max-w-[560px]">
                 <p>Ruby Hương Spa không phải là nơi để bạn "đẹp hơn" theo tiêu chuẩn ai đó. Nó là nơi để bạn được thở, được khóc nếu muốn, và được trở về là chính bạn. Là nơi tôi gieo từng ly trà, từng động tác chậm rãi – để nhắc nhở bạn rằng, bạn đủ đầy và xứng đáng được yêu thương.</p>
               </div>
-            </div>
-            <div className="flex items-center flex-wrap justify-center gap-3 mt-3 md:mt-0 max-w-[1284px] mx-auto">
+            </AnimateOnScroll>
+          </div>
+
+          <div className="flex items-center flex-wrap justify-center gap-3 mt-3 md:mt-0 max-w-[1284px] mx-auto">
+
+            <AnimateOnScroll delay={0.6}>
               <Link
                 href="/menu"
                 className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
@@ -98,36 +109,11 @@ export default async function AboutPage() {
                 </svg>
                 <span className="relative z-10 text-base">View menu</span>
               </Link>
+            </AnimateOnScroll>
 
-              {/* <a
-                href="https://m.me/amorthaomoc1"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Nhắn tin qua Facebook"
-                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 bg-[#CC424E] border-[#CC424E] text-white overflow-hidden transition-all duration-300
-                                before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full
-                                before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-                                hover:before:w-0 hover:bg-transparent hover:text-[#CC424E]"
-              >
-                <svg
-                  width="19"
-                  height="18"
-                  viewBox="0 0 19 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="relative z-10 fill-current transition-colors duration-300 group-hover:fill-[#CC424E]"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M0.541504 9C0.541504 4.51269 4.17919 0.875 8.6665 0.875H10.3332C10.5711 0.875 10.8067 0.885241 11.0397 0.905329C11.3836 0.934982 11.6383 1.23781 11.6087 1.58171C11.579 1.92561 11.2762 2.18036 10.9323 2.15071C10.735 2.1337 10.5352 2.125 10.3332 2.125H8.6665C4.86955 2.125 1.7915 5.20304 1.7915 9V13.1667C1.7915 14.6624 3.00407 15.875 4.49984 15.875H10.3332C14.1301 15.875 17.2082 12.797 17.2082 9C17.2082 8.798 17.1995 8.59817 17.1825 8.40087C17.1528 8.05697 17.4076 7.75414 17.7515 7.72449C18.0954 7.69483 18.3982 7.94958 18.4278 8.29348C18.4479 8.52646 18.4582 8.76211 18.4582 9C18.4582 13.4873 14.8205 17.125 10.3332 17.125H4.49984C2.31371 17.125 0.541504 15.3528 0.541504 13.1667V9ZM15.3332 2.125C14.2976 2.125 13.4582 2.96447 13.4582 4C13.4582 5.03553 14.2976 5.875 15.3332 5.875C16.3687 5.875 17.2082 5.03553 17.2082 4C17.2082 2.96447 16.3687 2.125 15.3332 2.125ZM12.2082 4C12.2082 2.27411 13.6073 0.875 15.3332 0.875C17.0591 0.875 18.4582 2.27411 18.4582 4C18.4582 5.72589 17.0591 7.125 15.3332 7.125C13.6073 7.125 12.2082 5.72589 12.2082 4Z"
-                  />
-                </svg>
-                <span className="relative z-10 text-base">Liên hệ</span>
-              </a> */}
-
+            <AnimateOnScroll delay={0.8}>
               <a
-                href="https://m.me/amorthaomoc1"
+                href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Nhắn tin qua Facebook"
@@ -135,12 +121,10 @@ export default async function AboutPage() {
               >
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
                 <svg
-                  width="19"
-                  height="18"
                   viewBox="0 0 19 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="relative z-10 fill-current transition-colors duration-300 group-hover:fill-[#CC424E]"
+                  className="relative z-10 h-6 w-6 fill-current transition-colors duration-300"
                 >
                   <path
                     fillRule="evenodd"
@@ -150,22 +134,29 @@ export default async function AboutPage() {
                 </svg>
                 <span className="relative z-10 text-base font-semibold">Liên hệ</span>
               </a>
-            </div>
+            </AnimateOnScroll>
           </div>
-        </AnimatedAboutSection>
+        </div>
       </Container>
 
       <Container>
-        <AnimatedAboutSection>
+        <AnimateOnScroll>
           <section className="mt-[138px] hidden md:block pb-8 mb-4">
             <div className="relative bg-[#CC424E] text-white rounded-xl max-w-[1024px] mx-auto">
               <div className="grid md:grid-cols-5 items-center relative z-20  h-[332px]">
                 <div className="max-w-[500px] mx-auto text-start col-span-3 relative pt-24">
-                  <p className="text-sm md:text-2xl italic">
-                    “Chúng ta không cần trở nên hoàn hảo, chỉ cần tử tế với chính mình – là đủ để bắt đầu một tháng rực rỡ.””
-                  </p>
+
+                  <AnimateOnScroll delay={0.2}>
+                    <p className="text-sm md:text-2xl italic">
+                      “Chúng ta không cần trở nên hoàn hảo, chỉ cần tử tế với chính mình – là đủ để bắt đầu một tháng rực rỡ.””
+                    </p>
+                  </AnimateOnScroll>
+
                   <img src="/about/quote.png" alt="icon" className="absolute -right-6 top-[60px] " />
-                  <p className="font-extrabold text-xl mt-5 md:mt-4 pb-20">Ruby Hương</p>
+
+                  <AnimateOnScroll delay={0.4}>
+                    <p className="font-extrabold text-xl mt-5 md:mt-4 pb-20">Ruby Hương</p>
+                  </AnimateOnScroll>
                 </div>
                 <div className="absolute right-0 -bottom-7 col-span-2 transform  z-10">
                   <Image
@@ -179,7 +170,7 @@ export default async function AboutPage() {
               </div>
             </div>
           </section>
-        </AnimatedAboutSection>
+        </AnimateOnScroll>
       </Container>
       <section className="block md:hidden md:pb-28 pb-[80px] mt-9 md:mt-0 ">
         <div className="relative bg-[#CC424E] text-white px-10">

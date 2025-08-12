@@ -115,7 +115,7 @@ export default function ProductDetailPage() {
     }
 
     return (
-        <div className="min-h-screen bg-[#fdfaf6] px-4 md:px-20 py-10 md:py-20">
+        <div className="min-h-screen  px-4 md:px-20 py-10 md:py-20">
             <section>
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                     {/* Image section */}
@@ -150,18 +150,18 @@ export default function ProductDetailPage() {
                         {/* Contact buttons */}
                         <div className="space-y-4">
                             <a
-                                href="https://m.me/maidodesigner.vn"
+                                href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 bg-[#cc2f43] text-white text-sm font-semibold py-4 rounded-full hover:opacity-90 transition"
+                                aria-label="Nhắn tin qua Facebook"
+                                className="group relative inline-flex w-full h-14 items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                             >
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
                                 <svg
-                                    width="19"
-                                    height="18"
                                     viewBox="0 0 19 18"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="relative z-10 fill-current transition-colors duration-300 group-hover:fill-white"
+                                    className="flex-shrink-0 w-6 h-6 z-10 fill-current transition-colors duration-300"
                                 >
                                     <path
                                         fillRule="evenodd"
@@ -169,13 +169,14 @@ export default function ProductDetailPage() {
                                         d="M0.541504 9C0.541504 4.51269 4.17919 0.875 8.6665 0.875H10.3332C10.5711 0.875 10.8067 0.885241 11.0397 0.905329C11.3836 0.934982 11.6383 1.23781 11.6087 1.58171C11.579 1.92561 11.2762 2.18036 10.9323 2.15071C10.735 2.1337 10.5352 2.125 10.3332 2.125H8.6665C4.86955 2.125 1.7915 5.20304 1.7915 9V13.1667C1.7915 14.6624 3.00407 15.875 4.49984 15.875H10.3332C14.1301 15.875 17.2082 12.797 17.2082 9C17.2082 8.798 17.1995 8.59817 17.1825 8.40087C17.1528 8.05697 17.4076 7.75414 17.7515 7.72449C18.0954 7.69483 18.3982 7.94958 18.4278 8.29348C18.4479 8.52646 18.4582 8.76211 18.4582 9C18.4582 13.4873 14.8205 17.125 10.3332 17.125H4.49984C2.31371 17.125 0.541504 15.3528 0.541504 13.1667V9ZM15.3332 2.125C14.2976 2.125 13.4582 2.96447 13.4582 4C13.4582 5.03553 14.2976 5.875 15.3332 5.875C16.3687 5.875 17.2082 5.03553 17.2082 4C17.2082 2.96447 16.3687 2.125 15.3332 2.125ZM12.2082 4C12.2082 2.27411 13.6073 0.875 15.3332 0.875C17.0591 0.875 18.4582 2.27411 18.4582 4C18.4582 5.72589 17.0591 7.125 15.3332 7.125C13.6073 7.125 12.2082 5.72589 12.2082 4Z"
                                     />
                                 </svg>
-                                <span className="relative z-10 text-base">Liên hệ</span>
+                                <span className="relative z-10 text-base font-semibold">Liên hệ</span>
                             </a>
 
                             <a
                                 href={`tel:${product.phone}`}
-                                className="flex items-center justify-center gap-2 border-2 border-[#cc2f43] text-[#cc2f43] font-semibold py-4 rounded-full hover:bg-[#cc2f43]/10 transition"
+                                className="group relative inline-flex w-full items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
                             >
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.162 3.487a1 1 0 01-.272 1.057L7.21 10.882a16.001 16.001 0 006.908 6.908l2.654-2.654a1 1 0 011.057-.272l3.487 1.162a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
                                 </svg>
@@ -223,54 +224,24 @@ export default function ProductDetailPage() {
                 </div>
 
                 <div className="flex mt-[52px] justify-center">
-                    {/* <Link
-                        href="/product"
-                        className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
-            before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
-            before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-            hover:before:w-full hover:border-transparent hover:text-white"
-                    >
-                        <button
-                            className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden transition-all duration-300
-                                before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0
-                                before:bg-[#CC424E] before:rounded-inherit before:transition-[width] before:ease-in-out before:duration-700
-                                hover:before:w-full hover:border-transparent hover:text-white"
-                        >
-                            <span className="relative z-10 text-base">Xem tất cả</span>
-                            <svg className="w-6 h-6 text-[#CC424E] " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
-                            </svg>
-                        </button>
-                    </Link> */}
-                     <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
-                        >
-                            <Link
-                                href="/product"
-                                className="group relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
-                            >
-                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-500 ease-in-out z-[-1] bg-[#CC424E]" />
 
-                                <svg
-                                    width="19"
-                                    height="18"
-                                    viewBox="0 0 19 18"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="relative z-10 fill-current transition-colors duration-300"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        clipRule="evenodd"
-                                        d="M0.541504 9C0.541504 4.51269 4.17919 0.875 8.6665 0.875H10.3332C10.5711 0.875 10.8067 0.885241 11.0397 0.905329C11.3836 0.934982 11.6383 1.23781 11.6087 1.58171C11.579 1.92561 11.2762 2.18036 10.9323 2.15071C10.735 2.1337 10.5352 2.125 10.3332 2.125H8.6665C4.86955 2.125 1.7915 5.20304 1.7915 9V13.1667C1.7915 14.6624 3.00407 15.875 4.49984 15.875H10.3332C14.1301 15.875 17.2082 12.797 17.2082 9C17.2082 8.798 17.1995 8.59817 17.1825 8.40087C17.1528 8.05697 17.4076 7.75414 17.7515 7.72449C18.0954 7.69483 18.3982 7.94958 18.4278 8.29348C18.4479 8.52646 18.4582 8.76211 18.4582 9C18.4582 13.4873 14.8205 17.125 10.3332 17.125H4.49984C2.31371 17.125 0.541504 15.3528 0.541504 13.1667V9ZM15.3332 2.125C14.2976 2.125 13.4582 2.96447 13.4582 4C13.4582 5.03553 14.2976 5.875 15.3332 5.875C16.3687 5.875 17.2082 5.03553 17.2082 4C17.2082 2.96447 16.3687 2.125 15.3332 2.125ZM12.2082 4C12.2082 2.27411 13.6073 0.875 15.3332 0.875C17.0591 0.875 18.4582 2.27411 18.4582 4C18.4582 5.72589 17.0591 7.125 15.3332 7.125C13.6073 7.125 12.2082 5.72589 12.2082 4Z"
-                                    />
-                                </svg>
-                                <span className="relative z-10 text-base">Liên hệ</span>
-                            </Link>
-                        </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
+                    >
+                        <Link
+                            href="/product"
+                            className="group relative inline-flex w-[220px] h-14 items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
+                        >
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
+                            <span className="relative z-10 text-[14px] md:text-base">Xem tất cả</span>
+                            <svg className="relative w-5 h-5 md:h-6 md:w-6 z-10 transition-colors duration-300]" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M19.0303 11.4697C19.3232 11.7626 19.3232 12.2374 19.0303 12.5303L15.0303 16.5303C14.7374 16.8232 14.2626 16.8232 13.9697 16.5303C13.6768 16.2374 13.6768 15.7626 13.9697 15.4697L16.6893 12.75L6.5 12.75C6.08579 12.75 5.75 12.4142 5.75 12C5.75 11.5858 6.08579 11.25 6.5 11.25L16.6893 11.25L13.9697 8.53033C13.6768 8.23744 13.6768 7.76256 13.9697 7.46967C14.2626 7.17678 14.7374 7.17678 15.0303 7.46967L19.0303 11.4697Z" fill="currentColor" />
+                            </svg>
+                        </Link>
+                    </motion.div>
 
                 </div>
             </section>
