@@ -13,9 +13,9 @@ export default async function Hero() {
   const backgroundSrc = isMobile ? "/pagehome/banner_mb.png" : "/pagehome/banner.png"
 
   return (
-    <section className="relative h-[600px] container mx-auto my-10">
+    <section className="relative inset-0 bg-[#FFEEE2] mx-5 lg:rounded-2xl lg:overflow-hidden lg:max-h-[600px]">
       <AnimateZoomInScroll>
-        <div className="absolute inset-0 bg-[#FFEEE2] mx-5">
+        <div className="absolute inset-0 bg-[#FFEEE2] rounded-2xl mx-5">
           <Image
             src={backgroundSrc}
             alt="Hero background"
