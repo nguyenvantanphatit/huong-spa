@@ -100,7 +100,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="relative w-24 h-8">
               <Image
-                src={isHome ? "/logo/logoHuongSpa.svg" : "/logo/logoHuongSpa.png"}
+                src={isHome ? "/logo/logoHuongSpa.png" : "/logo/logoHuongSpa.png"}
                 alt="Hương Spa"
                 fill
                 className="object-contain"
