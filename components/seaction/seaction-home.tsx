@@ -39,7 +39,9 @@ export default function SeactionHome() {
 
                             <AnimateOnScroll delay={0.6}>
                                 <a
-                                    href="tel:0931858808"
+                                    href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Gọi ngay"
                                     className="group relative inline-flex w-[172px] items-center justify-center gap-2 py-3 px-14 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                                 >
@@ -66,19 +68,21 @@ export default function SeactionHome() {
 
                             <AnimateOnScroll delay={0.2}>
                                 <p className="text-2xl font-semibold text-[#CC424E] pt-6 md:pt-10 max-w-[252px]">
-                                    Chăm sóc cho da dịu nhẹ 🌿
+                                    Thải độc – Thanh lọc cơ thể 🌿
                                 </p>
                             </AnimateOnScroll>
 
                             <AnimateOnScroll delay={0.4}>
                                 <p className="text-[#26262F] mb-5 md:mb-9 mt-3 md:mt-4 md:text-lg max-w-[316px]">
-                                    Không chỉ dưỡng da, Ruby giúp bạn lắng nghe làn da như một người bạn thân.
+                                    Hỗ trợ gan, ruột, thận... hoạt động trơn tru, cảm nhận sự tươi mới từ bên trong.
                                 </p>
                             </AnimateOnScroll>
 
                             <AnimateOnScroll delay={0.6}>
                                 <a
-                                    href="tel:0931858808"
+                                    href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Gọi ngay"
                                     className="group relative inline-flex w-[172px] items-center justify-center gap-2 py-3 px-14 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                                 >
@@ -105,19 +109,21 @@ export default function SeactionHome() {
 
                             <AnimateOnScroll delay={0.2}>
                                 <p className="text-2xl font-semibold text-[#CC424E] pt-6 md:pt-10 max-w-[252px]">
-                                    Chăm sóc cho da dịu nhẹ 🌿
+                                    Không gian nghỉ dưỡng tinh thần 🌿
                                 </p>
                             </AnimateOnScroll>
 
                             <AnimateOnScroll delay={0.4}>
                                 <p className="text-[#26262F] mb-5 md:mb-9 mt-3 md:mt-4 md:text-lg max-w-[316px]">
-                                    Không chỉ dưỡng da, Ruby giúp bạn lắng nghe làn da như một người bạn thân.
+                                    Ruby là khoảng lặng giữa thành phố, nơi bạn được yêu thương mà không cần cố gắng.
                                 </p>
                             </AnimateOnScroll>
 
                             <AnimateOnScroll delay={0.6}>
                                 <a
-                                    href="tel:0931858808"
+                                    href="https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Gọi ngay"
                                     className="group relative inline-flex w-[172px] items-center justify-center gap-2 py-3 px-14 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                                 >
