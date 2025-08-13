@@ -161,7 +161,7 @@ export default async function AboutPage() {
                 <div className="absolute right-0 -bottom-7 col-span-2 transform  z-10">
                   <Image
                     src="/about/Photo.svg"
-                    alt="Ty Anh Nguyen"
+                    alt="Hương Spa"
                     width={384}
                     height={502}
                     className="object-cover w-[384px] h-[502px]"
@@ -186,8 +186,8 @@ export default async function AboutPage() {
           </div>
           <div className="flex justify-center items-center">
             <Image
-              src="/about/ty-anh-nguyen.png"
-              alt="Ty Anh Nguyen"
+              src="/about/Photo.png"
+              alt="Hương Spa"
               width={230}
               height={442}
               className="object-cover"

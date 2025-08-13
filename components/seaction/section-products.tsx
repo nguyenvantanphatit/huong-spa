@@ -14,6 +14,7 @@ interface ProductSection {
   title: string;
   image: string;
   slug: string;
+  isNew: boolean
 
 }
 
@@ -22,105 +23,115 @@ const productData: ProductSection[] = [
     name: "Kem dưỡng đêm kiwi",
     title: "làm đẹp",
     image: "/products/item-1.png",
-    slug: "kem-duong-dem-kiwi"
-
+    slug: "kem-duong-dem-kiwi",
+    isNew: true,
   },
   {
     name: "Thạch anh treo phòng",
     title: "thực dưỡng",
     image: "/products/item-2.png",
-    slug: "thach-anh-treo-phong"
+    slug: "thach-anh-treo-phong",
+    isNew: false,
 
   },
   {
     name: "Sữa rửa mặt Collagen",
     title: "làm đẹp",
     image: "/products/item-3.png",
-    slug: "sua-rua-mat-collagen"
+    slug: "sua-rua-mat-collagen",
+    isNew: false,
   },
   {
     name: "Mặt nạ chanh tươi",
     title: "làm đẹp",
     image: "/products/item-4.png",
-    slug: "mat-nam-chanh-tu"
+    slug: "mat-nam-chanh-tu",
+    isNew: false,
   },
   {
     name: "Kem dưỡng đêm kiwi",
     title: "làm đẹp",
     image: "/products/item-1.png",
-    slug: "kem-duong-dem-kiwi"
-
+    slug: "kem-duong-dem-kiwi",
+    isNew: true,
   },
   {
     name: "Thạch anh treo phòng",
     title: "thực dưỡng",
     image: "/products/item-2.png",
-    slug: "thach-anh-treo-phong"
+    slug: "thach-anh-treo-phong",
+    isNew: false,
 
   },
   {
     name: "Sữa rửa mặt Collagen",
     title: "làm đẹp",
     image: "/products/item-3.png",
-    slug: "sua-rua-mat-collagen"
+    slug: "sua-rua-mat-collagen",
+    isNew: false,
   },
   {
     name: "Mặt nạ chanh tươi",
     title: "làm đẹp",
     image: "/products/item-4.png",
-    slug: "mat-nam-chanh-tu"
-  },
-  {
+    slug: "mat-nam-chanh-tu",
+    isNew: false,
+  }, {
     name: "Kem dưỡng đêm kiwi",
     title: "làm đẹp",
     image: "/products/item-1.png",
-    slug: "kem-duong-dem-kiwi"
-
+    slug: "kem-duong-dem-kiwi",
+    isNew: true,
   },
   {
     name: "Thạch anh treo phòng",
     title: "thực dưỡng",
     image: "/products/item-2.png",
-    slug: "thach-anh-treo-phong"
+    slug: "thach-anh-treo-phong",
+    isNew: false,
 
   },
   {
     name: "Sữa rửa mặt Collagen",
     title: "làm đẹp",
     image: "/products/item-3.png",
-    slug: "sua-rua-mat-collagen"
+    slug: "sua-rua-mat-collagen",
+    isNew: false,
   },
   {
     name: "Mặt nạ chanh tươi",
     title: "làm đẹp",
     image: "/products/item-4.png",
-    slug: "mat-nam-chanh-tu"
-  },
-  {
+    slug: "mat-nam-chanh-tu",
+    isNew: false,
+  }, {
     name: "Kem dưỡng đêm kiwi",
     title: "làm đẹp",
     image: "/products/item-1.png",
-    slug: "kem-duong-dem-kiwi"
-
+    slug: "kem-duong-dem-kiwi",
+    isNew: true,
   },
   {
     name: "Thạch anh treo phòng",
     title: "thực dưỡng",
     image: "/products/item-2.png",
-    slug: "thach-anh-treo-phong"
+    slug: "thach-anh-treo-phong",
+    isNew: false,
 
   },
   {
     name: "Sữa rửa mặt Collagen",
     title: "làm đẹp",
     image: "/products/item-3.png",
-    slug: "sua-rua-mat-collagen"
+    slug: "sua-rua-mat-collagen",
+    isNew: false,
   },
   {
     name: "Mặt nạ chanh tươi",
     title: "làm đẹp",
     image: "/products/item-4.png",
-    slug: "mat-nam-chanh-tu"
+    slug: "mat-nam-chanh-tu",
+    isNew: false,
   },
 ]
 
@@ -176,6 +187,11 @@ export default function ProductTabsSection() {
             >
               <Link href={`/product/${product.slug}`} key={index}>
                 <div className="relative group/card aspect-square overflow-hidden rounded-lg">
+                  {product.isNew && (
+                    <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
+                      New
+                    </div>
+                  )}
                   <Image
                     src={product.image}
                     alt={product.name}

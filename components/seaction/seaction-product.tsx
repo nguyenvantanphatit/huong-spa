@@ -28,14 +28,13 @@ export default function SeactionProduct() {
                                 viewport={{ once: true }}
                             >
                                 <div key={index} className="relative group/card">
-                                    {product.isNew && (
-                                        <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
-                                            New
-                                        </div>
-                                    )}
-
 
                                     <AnimateOnScroll delay={0.6}>
+                                        {product.isNew && (
+                                            <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
+                                                New
+                                            </div>
+                                        )}
                                         <Image
                                             src={product.imageSrc || "/placeholder.svg"}
                                             alt={product.productName}

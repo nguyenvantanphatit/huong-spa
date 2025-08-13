@@ -34,7 +34,7 @@ Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân the
 Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
         address: '30 Đặng Tất, P. Tân Định, TP.HCM',
         phone: '090 232 8566',
-        isNew: true,
+        isNew: false,
     },
     {
         slug: "sua-rua-mat-collagen",
@@ -45,7 +45,7 @@ Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân the
 Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
         address: '30 Đặng Tất, P. Tân Định, TP.HCM',
         phone: '090 232 8566',
-        isNew: true,
+        isNew: false,
     },
     {
         slug: "mat-nam-chanh-tu",
@@ -56,7 +56,7 @@ Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân the
 Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
         address: '30 Đặng Tất, P. Tân Định, TP.HCM',
         phone: '090 232 8566',
-        isNew: true,
+        isNew: false,
     },
     {
         slug: "kem-duong-dem-kiwi",
@@ -78,7 +78,7 @@ Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân the
 Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
         address: '30 Đặng Tất, P. Tân Định, TP.HCM',
         phone: '090 232 8566',
-        isNew: true,
+        isNew: false,
     },
     {
         slug: "sua-rua-mat-collagen",
@@ -89,7 +89,7 @@ Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân the
 Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
         address: '30 Đặng Tất, P. Tân Định, TP.HCM',
         phone: '090 232 8566',
-        isNew: true,
+        isNew: false,
     },
     {
         slug: "mat-nam-chanh-tu",
@@ -100,7 +100,7 @@ Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân the
 Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
         address: '30 Đặng Tất, P. Tân Định, TP.HCM',
         phone: '090 232 8566',
-        isNew: true,
+        isNew: false,
     },
 ]
 
@@ -183,9 +183,15 @@ export default function ProductDetailPage() {
                                 {product.phone}
                             </a>
 
-                            <p className="text-sm text-gray-600 text-center">
+                            <p className="text-sm text-gray-600 text-center flex justify-items-center items-center gap-1">
                                 Hoặc trải nghiệm tại&nbsp;
-                                <span className="text-gray-900 font-semibold">{product.address}</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M11.998 2.75C8.53161 2.75 5.74805 5.49877 5.74805 8.85714C5.74805 9.82928 6.11512 10.9893 6.74193 12.1702C7.36349 13.3411 8.20956 14.4741 9.09246 15.3791C9.67379 15.9749 10.2563 16.4568 10.784 16.7845C11.3285 17.1226 11.7401 17.25 11.998 17.25C12.256 17.25 12.6676 17.1226 13.2121 16.7845C13.7398 16.4568 14.3223 15.9749 14.9036 15.3791C15.7865 14.4741 16.6326 13.3411 17.2542 12.1702C17.881 10.9893 18.248 9.82928 18.248 8.85714C18.248 5.49877 15.4645 2.75 11.998 2.75ZM4.24805 8.85714C4.24805 4.64133 7.73249 1.25 11.998 1.25C16.2636 1.25 19.748 4.64133 19.748 8.85714C19.748 10.1694 19.2661 11.5791 18.5791 12.8734C17.8867 14.1777 16.954 15.4254 15.9773 16.4265C15.3354 17.0846 14.6596 17.6513 14.0034 18.0588C13.364 18.4558 12.666 18.75 11.998 18.75C11.3301 18.75 10.6321 18.4558 9.99274 18.0588C9.3365 17.6513 8.66074 17.0846 8.01877 16.4265C7.04206 15.4254 6.10935 14.1777 5.41702 12.8734C4.72996 11.5791 4.24805 10.1694 4.24805 8.85714ZM11.998 7.75C11.3077 7.75 10.748 8.30965 10.748 9C10.748 9.69036 11.3077 10.25 11.998 10.25C12.6884 10.25 13.248 9.69036 13.248 9C13.248 8.30965 12.6884 7.75 11.998 7.75ZM9.24805 9C9.24805 7.48122 10.4793 6.25 11.998 6.25C13.5168 6.25 14.748 7.48122 14.748 9C14.748 10.5188 13.5168 11.75 11.998 11.75C10.4793 11.75 9.24805 10.5188 9.24805 9Z" fill="#CC424E" />
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.58809 16.0962C9.63936 16.5072 9.34773 16.882 8.9367 16.9333C7.27534 17.1405 5.89865 17.5068 4.96064 17.9497C4.49031 18.1718 4.16643 18.3963 3.97011 18.5991C3.77698 18.7986 3.74805 18.9314 3.74805 18.9996C3.74805 19.0856 3.7996 19.2868 4.16954 19.5783C4.53103 19.8632 5.10059 20.1526 5.87126 20.4094C7.40474 20.9206 9.57094 21.2496 11.998 21.2496C14.4251 21.2496 16.5913 20.9206 18.1248 20.4094C18.8955 20.1526 19.4651 19.8632 19.8266 19.5783C20.1965 19.2868 20.248 19.0856 20.248 18.9996C20.248 18.9314 20.2191 18.7986 20.026 18.5991C19.8297 18.3963 19.5058 18.1718 19.0355 17.9497C18.0974 17.5068 16.7208 17.1405 15.0594 16.9333C14.6484 16.882 14.3567 16.5072 14.408 16.0962C14.4593 15.6852 14.8341 15.3935 15.2451 15.4448C16.9985 15.6636 18.5447 16.0592 19.6759 16.5933C20.2402 16.8597 20.7375 17.1775 21.1037 17.5558C21.4731 17.9374 21.748 18.4244 21.748 18.9996C21.748 19.7422 21.2959 20.3302 20.755 20.7564C20.2057 21.1894 19.4572 21.5465 18.5992 21.8325C16.8753 22.4071 14.5415 22.7496 11.998 22.7496C9.45459 22.7496 7.12079 22.4071 5.39691 21.8325C4.5389 21.5465 3.79044 21.1894 3.24108 20.7564C2.70018 20.3302 2.24805 19.7422 2.24805 18.9996C2.24805 18.4244 2.52299 17.9374 2.89239 17.5558C3.2586 17.1775 3.75589 16.8597 4.32016 16.5933C5.45136 16.0592 6.99757 15.6636 8.75101 15.4448C9.16204 15.3935 9.53681 15.6852 9.58809 16.0962Z" fill="#CC424E" />
+                                </svg>
+                                <span className="text-gray-900 font-semibold">
+                                    {product.address}
+                                </span>
                             </p>
                         </div>
                     </div>
