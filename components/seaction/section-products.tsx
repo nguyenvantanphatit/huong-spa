@@ -202,7 +202,7 @@ export default function ProductTabsSection() {
                         group-hover/card:opacity-100 group-hover/card:translate-y-0 
                         transition-all duration-300 ease-in-out">
                   <button
-                    className="group/btn relative inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
+                    className="group/btn relative hidden md:inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
                   >
                     {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
                     <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 

@@ -183,7 +183,7 @@ export default function ProductDetailPage() {
                                 {product.phone}
                             </a>
 
-                            <p className="text-sm text-[#3E4450] flex flex-col md:flex-row gap-1">
+                            <div className="text-sm text-[#3E4450] flex flex-col md:flex-row gap-1">
                                 Hoặc trải nghiệm tại&nbsp;
                                 <div className='flex gap-1'>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -194,7 +194,7 @@ export default function ProductDetailPage() {
                                         89/57 đường 59, p14, TP.HCM
                                     </span>
                                 </div>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
