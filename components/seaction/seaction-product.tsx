@@ -24,25 +24,23 @@ export default function SeactionProduct() {
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.15 }}
+                                transition={{ duration: 0.5, delay: index * 0.20 }}
                                 viewport={{ once: true }}
                             >
                                 <div key={index} className="relative group/card">
 
-                                    <AnimateOnScroll delay={0.6}>
-                                        {product.isNew && (
-                                            <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
-                                                New
-                                            </div>
-                                        )}
-                                        <Image
-                                            src={product.imageSrc || "/placeholder.svg"}
-                                            alt={product.productName}
-                                            width={320}
-                                            height={320}
-                                            className="w-full h-[156px] md:h-[320px] object-cover rounded-[20px]"
-                                        />
-                                    </AnimateOnScroll>
+                                    {product.isNew && (
+                                        <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
+                                            New
+                                        </div>
+                                    )}
+                                    <Image
+                                        src={product.imageSrc || "/placeholder.svg"}
+                                        alt={product.productName}
+                                        width={320}
+                                        height={320}
+                                        className="w-full h-[156px] md:h-[320px] object-cover rounded-[20px]"
+                                    />
 
                                     {/* Nút chỉ hiện khi hover card */}
                                     <div className="absolute inset-0 flex items-end justify-center pb-[30%] opacity-0 translate-y-4 
@@ -59,13 +57,11 @@ export default function SeactionProduct() {
                                         </button>
                                     </div>
 
-                                    <AnimateOnScroll delay={0.7}>
-                                        <div className="mt-2 md:mt-4 text-center md:text-start">
-                                            <h3 className="text-xs md:text-lg h-5 md:h-[30px] font-semibold text-gray-800">
-                                                {product.productName}
-                                            </h3>
-                                        </div>
-                                    </AnimateOnScroll>
+                                    <div className="mt-2 md:mt-4 text-center md:text-start">
+                                        <p className="text-xs md:text-lg h-5 md:h-[30px] font-semibold text-[#15171B]">
+                                            {product.productName}
+                                        </p>
+                                    </div>
                                 </div>
                             </motion.div>
                         </Link>

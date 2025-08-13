@@ -25,15 +25,15 @@ export default function SeactionDesc() {
               <br />TỪ BÊN TRONG
             </h3>
 
-            <div className="text-gray-600 text-[14px] md:text-[18px] leading-[24px] md:leading-[28px] font-normal">
+            <div className="text-[#2E333D] text-[14px] md:text-[18px] leading-[24px] md:leading-[28px] font-normal">
               <AnimateOnScroll delay={0.4}>
-                <p className="text-gray-600 mb-5 md:mb-8">
+                <p className="text-[#2E333D] mb-5 md:mb-8">
                   Giữa nhịp sống hối hả, Ruby mang đến một khoảng lặng để bạn tìm về sự bình yên, nơi mọi lo toan tan biến, chỉ còn lại sự thư thái và an nhiên.
                 </p>
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={0.6}>
-                <p className="text-gray-600 mb-6 md:mb-9">
+                <p className="text-[#2E333D] mb-6 md:mb-9">
                   Chúng tôi tin rằng, vẻ đẹp thật sự bắt đầu từ bên trong. Khi tâm hồn an lạc, một hạt từ yên lành, đến ánh mắt biết cười.
                 </p>
               </AnimateOnScroll>

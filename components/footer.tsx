@@ -67,7 +67,7 @@ export default async function FooterSeaction() {
             </div>
             <div className="flex items-center gap-2">
               <img className="w-6 h-6 md:w-8 md:h-8" src="/footer/phone.svg" alt="Điện thoại" />
-              <p className="text-[#2E333D] font-semibold text-xs md:text-base leading-5 md:leading-6">0931858808</p>
+              <p className="text-[#2E333D] font-semibold text-xs md:text-base leading-5 md:leading-6">0931 858 808</p>
             </div>
           </div>
 
