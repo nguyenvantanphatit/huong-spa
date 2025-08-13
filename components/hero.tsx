@@ -20,7 +20,7 @@ export default async function Hero() {
             src={backgroundSrc}
             alt="Hero background"
             fill
-            priority
+            priority={false}
             quality={75}
             sizes="100vw"
             className="object-fill"
