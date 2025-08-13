@@ -13,9 +13,11 @@ export default async function Hero() {
   const backgroundSrc = isMobile ? "/pagehome/banner_mb.png" : "/pagehome/banner.png"
 
   return (
-    <section className="relative inset-0 bg-[#FFEEE2] mx-5 lg:rounded-2xl lg:overflow-hidden lg:max-h-[600px]">
+    <section
+      className="relative mx-5 md:mx-auto max-w-7xl rounded-2xl justify-center overflow-hidden bg-[#FFEEE2] lg:max-h-[600px]"
+    >
       <AnimateZoomInScroll>
-        <div className="absolute inset-0 bg-[#FFEEE2] rounded-2xl mx-5">
+        <div className="absolute inset-0">
           <Image
             src={backgroundSrc}
             alt="Hero background"
@@ -23,7 +25,7 @@ export default async function Hero() {
             priority={false}
             quality={75}
             sizes="100vw"
-            className="object-fill"
+            className="object-cover"
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLiHLnLnLnLnk5A4A4A4A8bZ"
           />

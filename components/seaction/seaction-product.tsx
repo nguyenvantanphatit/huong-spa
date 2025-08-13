@@ -16,7 +16,7 @@ export default function SeactionProduct() {
 
     return (
         <>
-            <section className=" py-5 px-6 md:py-10 md:mt-5 mb-[10px] md:mb-2 container mx-auto">
+            <section className=" py-5 px-6 md:py-10 mt-10 md:mt-5 mb-[10px] md:mb-2 container mx-auto">
                 <h2 className="text-3xl md:text-[40px] font-normal text-center text-[#CC424E] mb-5 md:mb-10">SẢN PHẨM RUBY HƯƠNG</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-[15px] md:gap-6">
                     {products.map((product, index) => (

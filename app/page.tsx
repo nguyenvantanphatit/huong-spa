@@ -36,16 +36,11 @@ export default function HomePage() {
           }),
         }}
       />
-      <div>
-        <Hero />
-        <div className="py-5">
-          <SeactionProduct />
-        </div>
-
-        <SeactionDesc />
-        <SeactionHome />
-        <SeactionContact />
-      </div>
+      <Hero />
+      <SeactionProduct />
+      <SeactionDesc />
+      <SeactionHome />
+      <SeactionContact />
 
     </>
   )
