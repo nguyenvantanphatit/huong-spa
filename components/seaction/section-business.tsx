@@ -14,7 +14,7 @@ export default function SectionBusiness() {
           >
             <Image
               src="/banner/khoi-nghiep.webp"
-              alt="Amor spa khoi nghiep"
+              alt="Hương Xinh khoi nghiep"
               width={504}
               height={713}
               className="object-cover"
@@ -28,7 +28,7 @@ export default function SectionBusiness() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="text-xl md:text-[40px] font-medium text-[#824435] mb-7 text-center md:text-start">
-            CÙNG AMOR SPA, BẠN<br />
+            CÙNG Hương Xinh, BẠN<br />
             <span className="block md:mt-6">KHÔNG ĐI MỘT MÌNH</span>
           </h2>
           <div className="space-y-6 max-w-[568px]">
@@ -40,7 +40,7 @@ export default function SectionBusiness() {
               className="text-[#2E333D] text-center md:text-start max-w-[568px] text-base md:text-lg"
             >
               Bạn yêu thích lĩnh vực chăm sóc sắc đẹp và mong muốn bắt đầu kinh doanh spa, nhưng lại e ngại về rủi
-              ro tài chính và thiếu kinh nghiệm? AMOR Spa mang đến giải pháp hoàn hảo dành cho bạn với mô hình
+              ro tài chính và thiếu kinh nghiệm? Hương Xinh mang đến giải pháp hoàn hảo dành cho bạn với mô hình
               nhượng quyền spa thông minh, chi phí tối ưu.
             </motion.p>
             <motion.p
@@ -50,7 +50,7 @@ export default function SectionBusiness() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-[#2E333D] text-center md:text-start max-w-[568px] text-base md:text-lg"
             >
-              Với hơn 15 năm kinh nghiệm trong ngành, AMOR Spa không chỉ trao cho bạn một thương hiệu đã được khẳng
+              Với hơn 15 năm kinh nghiệm trong ngành, Hương Xinh không chỉ trao cho bạn một thương hiệu đã được khẳng
               định, mà còn đồng hành để bạn khởi nghiệp một cách an toàn, bài bản và nhanh chóng đạt được thành
               công.
             </motion.p>

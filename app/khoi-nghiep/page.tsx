@@ -6,7 +6,7 @@ import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "Sản Phẩm | AMOR THẢO MỘC",
-  description: "Cơ hội hợp tác và khởi nghiệp cùng AMOR Spa – mô hình spa chuyên nghiệp, thương hiệu uy tín và hỗ trợ toàn diện.",
+  description: "Cơ hội hợp tác và khởi nghiệp cùng Hương Xinh – mô hình spa chuyên nghiệp, thương hiệu uy tín và hỗ trợ toàn diện.",
 }
 
 export default function BusinessPage() {
