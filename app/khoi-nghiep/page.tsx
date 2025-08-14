@@ -5,8 +5,8 @@ import SectionBusiness from "@/components/seaction/section-business"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Khởi Nghiệp | AMOR THẢO MỘC",
-  description: "Cơ hội hợp tác và khởi nghiệp cùng AMOR Spa – mô hình spa chuyên nghiệp, thương hiệu uy tín và hỗ trợ toàn diện.",
+  title: "Sản Phẩm | AMOR THẢO MỘC",
+  description: "Cơ hội hợp tác và khởi nghiệp cùng Hương Xinh – mô hình spa chuyên nghiệp, thương hiệu uy tín và hỗ trợ toàn diện.",
 }
 
 export default function BusinessPage() {

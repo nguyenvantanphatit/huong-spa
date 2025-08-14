@@ -1,2 +1,1 @@
-# mera-spa
 # huong-spa

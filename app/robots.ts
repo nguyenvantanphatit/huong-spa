@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://amorspa.vn/sitemap.xml",
+    sitemap: "https://huongspa.vn/sitemap.xml",
   }
 }
 

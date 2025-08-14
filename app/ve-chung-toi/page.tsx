@@ -11,8 +11,8 @@ import { motion } from "framer-motion";
 import AnimateOnScroll from "@/components/animations/AnimateOnScroll";
 
 export const metadata: Metadata = {
-  title: "Về Chúng Tôi | AMOR THẢO MỘC",
-  description: "Tìm hiểu về AMOR Spa – nơi hội tụ đam mê làm đẹp, chăm sóc khách hàng tận tâm và không gian thư giãn đẳng cấp.",
+  title: "Về Chúng Tôi | Ruby Hương Spa",
+  description: "Tìm hiểu về Hương Spa – nơi hội tụ đam mê làm đẹp, chăm sóc khách hàng tận tâm và không gian thư giãn đẳng cấp.",
 }
 
 export default async function AboutPage() {
@@ -36,13 +36,13 @@ export default async function AboutPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Trang chủ",
-                "item": "https://amorspa.vn"
+                "item": "https://huongspa.vn"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Về Chúng Tôi",
-                "item": "https://amorspa.vn/ve-chung-toi"
+                "item": "https://huongspa.vn/ve-chung-toi"
               }
             ]
           })

@@ -248,7 +248,7 @@ export default function Header() {
           {/* <Link href="/" className="relative w-32 h-10">
             <Image
               src={isHome ? "/logo/logoHuongSpa.png" : "/logo/logoHuongSpa.png"}
-              alt="Amor Spa"
+              alt="Hương Spa"
               fill
               className="object-contain h-full w-full"
               priority
@@ -278,7 +278,7 @@ export default function Header() {
             })}
           </div> */}
 
-          <div className="flex text-sm font-normal items-center space-x-[60px]">
+          <div className="flex text-sm font-normal items-center space-x-5">
             {menuItems.map((item) => {
               const isActive = pathname === item.href
               return (
@@ -287,13 +287,13 @@ export default function Header() {
                   href={item.href}
                   className={cn(
                     "group relative inline-flex items-center justify-center gap-2 py-2 px-4 font-normal rounded-full whitespace-nowrap overflow-hidden transition-colors",
-                    "hover:text-[#CC424E] hover:bg-transparent hover:border-transparent",
-                    isHome ? "text-[#2E333D]" : "text-[#2E333D] hover:text-[#CC424E]",
-                    isActive && (isHome ? "font-semibold" : "text-[#15171B] text-base font-semibold"),
+                    "hover:text-white hover:bg-transparent hover:border-transparent",
+                    isHome ? "text-[#2E333D] hover:font-bold" : "text-[#2E333D] hover:font-bold hover:text-white",
+                    isActive && (isHome ? "font-bold" : "text-[#15171B] text-base font-bold"),
                   )}
                 >
                   {item.label}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white" />
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#2E333D]" />
                 </Link>
               )
             })}

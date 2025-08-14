@@ -29,7 +29,7 @@ export default function SeactionBusiness() {
                             viewport={{ once: true, amount: 0.3 }}
                         >
                             Bạn yêu thích lĩnh vực chăm sóc sắc đẹp và mong muốn bắt đầu kinh doanh spa, nhưng lại e ngại về rủi ro
-                            tài chính và thiếu kinh nghiệm? AMOR Spa mang đến giải pháp hoàn hảo dành cho bạn với mô hình nhượng
+                            tài chính và thiếu kinh nghiệm? Hương Xinh mang đến giải pháp hoàn hảo dành cho bạn với mô hình nhượng
                             quyền spa thông minh, chi phí tối ưu.
                         </motion.p>
 

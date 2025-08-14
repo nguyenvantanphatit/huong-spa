@@ -39,7 +39,7 @@ export default function SectionMenu() {
       >
         <img
           src="/menu/menu.png"
-          alt="menu amor spa"
+          alt="menu hương spa"
           className="w-full hover:opacity-90 transition-opacity duration-300"
         />
         <div className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -76,7 +76,7 @@ export default function SectionMenu() {
             <div className="relative">
               <img
                 src={selectedImage.src}
-                alt="menu amor spa"
+                alt="menu hương spa"
                 className="object-contain max-w-full max-h-full rounded-lg shadow-2xl cursor-zoom-in"
                 style={{ maxHeight: '80vh' }}
               />

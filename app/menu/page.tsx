@@ -5,8 +5,8 @@ import SectionMenu from "@/components/seaction/section-menu"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Menu | AMOR THẢO MỘC",
-  description: "Khám phá bảng giá và các dịch vụ chăm sóc sắc đẹp chuyên nghiệp tại AMOR Spa – từ chăm sóc da, massage đến liệu trình cao cấp.",
+  title: "Menu | Ruby Hương Spa",
+  description: "Khám phá bảng giá và các dịch vụ chăm sóc sắc đẹp chuyên nghiệp tại Hương Spa – từ chăm sóc da, massage đến liệu trình cao cấp.",
 }
 
 export default function MenuPage() {
@@ -24,22 +24,22 @@ export default function MenuPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Trang chủ",
-                "item": "https://amorspa.vn"
+                "item": "https://huongspa.vn"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Dịch Vụ",
-                "item": "https://amorspa.vn/menu"
+                "item": "https://huongspa.vn/menu"
               }
             ]
           })
         }}
       />
-        <Container>
-          <SectionMenu />
-        </Container>
-        <SeactionContact />
+      <Container>
+        <SectionMenu />
+      </Container>
+      <SeactionContact />
     </>
   )
 }
