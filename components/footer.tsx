@@ -28,30 +28,30 @@ export default async function FooterSeaction() {
           <nav className="flex items-center justify-center gap-5 md:gap-[60px] pt-10 md:pt-[76px] text-[#26262F]">
             <Link
               href="/ve-chung-toi"
-              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors hover:text-[#CC424E]"
+              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors hover:font-bold hover:text-white"
             >
               VỀ RUBY HƯƠNG
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white"
+                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#2E333D]"
               />
             </Link>
 
             <Link
               href="/menu"
-              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors hover:text-[#CC424E]"
+              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors hover:font-bold hover:text-white"
             >
               MENU
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white"
+                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#2E333D]"
               />
             </Link>
 
             <Link
               href="/product"
-              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors hover:text-[#CC424E]">
+              className="tracking-widest text-xs md:text-base font-medium group relative inline-flex items-center justify-center gap-2 py-2 px-4 rounded-full whitespace-nowrap overflow-hidden transition-colors hover:font-bold hover:text-white">
               SẢN PHẨM
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-white"
+                className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#2E333D]"
               />
             </Link>
           </nav>
