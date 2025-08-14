@@ -10,8 +10,8 @@ import SeactionProduct from "@/components/seaction/seaction-product"
 import SeactionDesc from "@/components/seaction/seaction-desc"
 
 export const metadata: Metadata = {
-  title: "Trang chủ | AMOR THẢO MỘC",
-  description: "AMOR Spa cung cấp dịch vụ chăm sóc sắc đẹp cao cấp, không gian thư giãn và đội ngũ chuyên viên chuyên nghiệp.",
+  title: "Trang chủ | Ruby Hương Spa",
+  description: "Ruby Hương Spa cung cấp dịch vụ chăm sóc sắc đẹp cao cấp, không gian thư giãn và đội ngũ chuyên viên chuyên nghiệp.",
 }
 
 export default function HomePage() {
@@ -30,7 +30,7 @@ export default function HomePage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Trang chủ",
-                "item": "https://amorspa.vn"
+                "item": "https://huongspa.vn"
               }
             ]
           }),

@@ -24,7 +24,7 @@ on:
 
 jobs:
   push_to_registry:
-    runs-on: [self-hosted, build, amor]
+    runs-on: [self-hosted, build, huongspa]
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4

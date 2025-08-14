@@ -13,8 +13,8 @@ export default function SeactionContact() {
                     className="flex justify-center items-center md:w-[434px] md:h-[433px] md:shrink-0"
                 >
                     <Image
-                        src="/contact/Amor-spa-contact.png"
-                        alt="Amor spa contact"
+                        src="/contact/Huong-spa-contact.png"
+                        alt="Hương spa contact"
                         width={433}
                         height={433}
                         className="object-cover"

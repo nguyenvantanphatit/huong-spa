@@ -5,8 +5,9 @@ import Script from "next/script"
 import ProductTabsSection from "@/components/seaction/section-products"
 
 export const metadata: Metadata = {
-  title: "Khởi Nghiệp | AMOR THẢO MỘC",
-  description: "Cơ hội hợp tác và khởi nghiệp cùng AMOR Spa – mô hình spa chuyên nghiệp, thương hiệu uy tín và hỗ trợ toàn diện.",
+  title: "Sản Phẩm | Ruby Hương Spa",
+  description:
+    "Khám phá các sản phẩm chăm sóc sức khỏe và sắc đẹp của Hương Spa – mỹ phẩm organic, thảo mộc thiên nhiên, an toàn và hiệu quả.",
 }
 
 export default function BusinessPage() {
@@ -14,7 +15,7 @@ export default function BusinessPage() {
     <>
       <Script
         type="application/ld+json"
-        id="breadcrumb-jsonld-khoi-nghiep"
+        id="breadcrumb-jsonld-san-pham"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -24,22 +25,22 @@ export default function BusinessPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Trang chủ",
-                "item": "https://amorspa.vn"
+                "item": "https://huongspa.vn"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Khởi Nghiệp",
-                "item": "https://amorspa.vn/khoi-nghiep"
+                "name": "Sản Phẩm",
+                "item": "https://huongspa.vn/khoi-nghiep"
               }
             ]
           })
         }}
       />
-        <div className="container px-6 mx-auto">
-          <ProductTabsSection />
-        </div>
-        <SeactionContact />
+      <div className="container px-6 mx-auto">
+        <ProductTabsSection />
+      </div>
+      <SeactionContact />
     </>
   )
 }

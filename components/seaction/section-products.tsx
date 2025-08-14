@@ -5,6 +5,7 @@ import AnimateOnScroll from "../animations/AnimateOnScroll"
 import { useState } from "react"
 import { Pagination } from "../ui/Pagination"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 
 
@@ -159,16 +160,20 @@ export default function ProductTabsSection() {
         {tabs.map(tab => (
           <button
             key={tab}
-            className={`px-4 py-3 rounded-full text-base font-semibold transition ${currentTab === tab
-              ? "bg-black text-white"
-              : "text-[#2E333D] hover:bg-black hover:text-white"
-              }`}
             onClick={() => {
               setCurrentTab(tab)
               setCurrentPage(1)
             }}
+            className={cn(
+              "group relative inline-flex items-center justify-center px-4 py-3 rounded-full text-base whitespace-nowrap overflow-hidden transition-colors",
+              currentTab === tab
+                ? "text-[#2E333D] hover:text-white font-bold"
+                : "text-[#2E333D] hover:text-white hover:font-bold",
+            )}
           >
             {tab}
+            {/* Hiệu ứng nền tròn phóng lên */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#2E333D]" />
           </button>
         ))}
       </div>

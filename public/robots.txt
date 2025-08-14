@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amorspa.vn/sitemap.xml
+Sitemap: https://huongspa.vn/sitemap.xml

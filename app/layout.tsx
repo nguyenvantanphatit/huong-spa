@@ -14,17 +14,27 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "AMOR THẢO MỘC - Hidden Spa In SaiGon",
-    template: "%s | AMOR THẢO MỘC",
+    default: "Ruby Hương Spa - AN NHIÊN TỪ BÊN TRONG",
+    template: "%s | Ruby Hương Spa",
   },
   description:
-    "AMOR THẢO MỘC - Organic Spa 2019 Được xây dựng trên nền tảng Sức Khỏe và Sắc Đẹp",
+    "Ruby Hương Spa - Spa thư giãn và cửa hàng bán sản phẩm chăm sóc sức khỏe, sắc đẹp từ thiên nhiên và organic.",
   keywords: [
-    "AMOR THẢO MỘC", "spa", "spa thư giãn", "chăm sóc da", "dịch vụ làm đẹp", "massage", "chăm sóc sắc đẹp", "AMOR Spa"
+    "Ruby Hương Spa",
+    "spa thư giãn",
+    "massage",
+    "chăm sóc da",
+    "dịch vụ làm đẹp",
+    "sản phẩm chăm sóc da",
+    "mỹ phẩm organic",
+    "mua mỹ phẩm spa",
+    "spa bán hàng",
+    "thảo mộc chăm sóc sắc đẹp",
+    "Hương Spa"
   ],
-  authors: [{ name: "AMOR Spa", url: "https://amorspa.vn" }],
-  creator: "AMOR Spa",
-  publisher: "AMOR Spa",
+  authors: [{ name: "Hương Spa", url: "https://huongspa.vn" }],
+  creator: "Hương Spa",
+  publisher: "Hương Spa",
   robots: {
     index: true,
     follow: true,
@@ -42,11 +52,11 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico"
   },
   openGraph: {
-    title: "AMOR THẢO MỘC - Hidden Spa In SaiGon",
+    title: "Ruby Hương Spa - AN NHIÊN TỪ BÊN TRONG",
     description:
-      "AMOR THẢO MỘC - Organic Spa 2019 Được xây dựng trên nền tảng Sức Khỏe và Sắc Đẹp",
-    url: "https://amorspa.vn",
-    siteName: "AMOR Spa",
+      "Ruby Hương Spa - Spa thư giãn và cửa hàng bán sản phẩm chăm sóc sức khỏe, sắc đẹp từ thiên nhiên và organic.",
+    url: "https://huongspa.vn",
+    siteName: "Hương Spa",
     locale: "vi_VN",
     type: "website",
     images: [
@@ -54,19 +64,19 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "AMOR THẢO MỘC - Hidden Spa In SaiGon",
+        alt: "Ruby Hương Spa - AN NHIÊN TỪ BÊN TRONG",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AMOR THẢO MỘC - Hidden Spa In SaiGon",
+    title: "Ruby Hương Spa - AN NHIÊN TỪ BÊN TRONG",
     description:
-      "AMOR THẢO MỘC - Organic Spa 2019 Được xây dựng trên nền tảng Sức Khỏe và Sắc Đẹp",
-    creator: "@amorspa",
+      "Ruby Hương Spa - Spa thư giãn và cửa hàng bán sản phẩm chăm sóc sức khỏe, sắc đẹp từ thiên nhiên và organic.",
+    creator: "@huongspa",
     images: ["/opengraph-image.png"],
   },
-  metadataBase: new URL("https://amorspa.vn"),
+  metadataBase: new URL("https://huongspa.vn"),
 }
 
 export default function RootLayout({
@@ -88,25 +98,25 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "HealthAndBeautyBusiness",
-              "name": "AMOR THẢO MỘC",
-              "image": "https://amorspa.vn/opengraph-image.png",
-              "url": "https://amorspa.vn",
-              "telephone": "+84-902-328-566",
+              "name": "Ruby Hương Spa",
+              "image": "https://huongspa.vn/opengraph-image.png",
+              "url": "https://huongspa.vn",
+              "telephone": "+84-931-858-808",
               "founder": {
                 "@type": "Person",
-                "name": "Ty Anh Nguyễn"
+                "name": "Ruby Hương"
               },
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "30 Đặng Tất",
-                "addressLocality": "Phường Tân Định",
-                "addressRegion": "Quận 1, Hồ Chí Minh",
+                "streetAddress": "89/57 đường 59",
+                "addressLocality": "Phường 14",
+                "addressRegion": "Quận Gò Vấp, Hồ Chí Minh",
                 "postalCode": "700000",
                 "addressCountry": "VN"
               },
               "areaServed": {
                 "@type": "Place",
-                "name": "Phường Tân Định"
+                "name": "Phường 14"
               },
               "openingHoursSpecification": [
                 {
@@ -114,13 +124,13 @@ export default function RootLayout({
                   "dayOfWeek": [
                     "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
                   ],
-                  "opens": "10:00",
+                  "opens": "9:00",
                   "closes": "20:00"
                 }
               ],
-              "description": "AMOR THẢO MỘC - Spa thư giãn tại Sài Gòn chuyên chăm sóc sức khỏe và sắc đẹp bằng thảo mộc tự nhiên.",
+              "description": "Hương Spa - Spa thư giãn tại Sài Gòn chuyên chăm sóc sức khỏe và sắc đẹp bằng thảo mộc tự nhiên.",
               "sameAs": [
-                "https://www.facebook.com/amorthaomoc1"
+                "https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
               ]
             }),
           }}
@@ -133,11 +143,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "AMOR THẢO MỘC",
-              "url": "https://amorspa.vn",
+              "name": "Ruby Hương Spa",
+              "url": "https://huongspa.vn",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://amorspa.vn/search?q={search_term_string}",
+                "target": "https://huongspa.vn/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }),
@@ -150,11 +160,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "AMOR THẢO MỘC",
-              "url": "https://amorspa.vn",
-              "logo": "https://amorspa.vn/opengraph-image.png",
+              "name": "Ruby Hương Spa",
+              "url": "https://huongspa.vn",
+              "logo": "https://huongspa.vn/opengraph-image.png",
               "sameAs": [
-                "https://www.facebook.com/amorthaomoc1"
+                "https://www.facebook.com/share/1FKSn2djM6/?mibextid=wwXIfr"
               ]
             }),
           }}
