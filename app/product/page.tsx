@@ -31,7 +31,7 @@ export default function BusinessPage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Sản Phẩm",
-                "item": "https://huongspa.vn/khoi-nghiep"
+                "item": "https://huongspa.vn/san-pham"
               }
             ]
           })
