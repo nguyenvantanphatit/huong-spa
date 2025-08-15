@@ -1,12 +1,11 @@
 'use client'
 import { AnimatePresence, motion } from "framer-motion"
-import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback, useMemo, useTransition } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Pagination } from "../ui/Pagination"
-import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { fetchProducts, Product, ProductListResponse, MEDIA_BASE_URL, isProductNew, Category } from "@/lib/api"
+import { fetchProducts, Product, ProductListResponse, isProductNew, Category } from "@/lib/api"
+import ProductCard from "@/components/product-card"
 
 export default function ProductTabsSection() {
   const router = useRouter()
@@ -17,111 +16,130 @@ export default function ProductTabsSection() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [totalPages, setTotalPages] = useState(1)
-  const [totalProducts, setTotalProducts] = useState(0)
+  const [, startTransition] = useTransition()
 
-  const categoryMapping = categories.reduce((acc, category) => {
-    acc[category.name] = category.id
-    return acc
-  }, { "Tất cả": null } as Record<string, number | null>)
+  const categoryMapping = useMemo(() =>
+    categories.reduce((acc, category) => {
+      acc[category.name] = category.id
+      return acc
+    }, { "Tất cả": null } as Record<string, number | null>)
+  , [categories])
 
-  const tabs = ["Tất cả", ...categories.map(cat => cat.name)]
+  const tabs = useMemo(() =>
+    ["Tất cả", ...categories.map(cat => cat.name)]
+  , [categories])
 
-  const currentPage = parseInt(searchParams.get('page') || '1')
+  const currentPage = useMemo(() =>
+    parseInt(searchParams.get('page') || '1')
+  , [searchParams])
+
   const categoryParam = searchParams.get('category')
-  const currentTab = categoryParam ?
-    Object.keys(categoryMapping).find(key => categoryMapping[key as keyof typeof categoryMapping] === parseInt(categoryParam)) || "Tất cả"
-    : "Tất cả"
+  const currentTab = useMemo(() =>
+    categoryParam ?
+      Object.keys(categoryMapping).find(key =>
+        categoryMapping[key as keyof typeof categoryMapping] === parseInt(categoryParam)
+      ) || "Tất cả"
+      : "Tất cả"
+  , [categoryParam, categoryMapping])
 
-  const itemsPerPage = 2
+  const itemsPerPage = 8
 
-  // Function to update URL params
-  const updateURL = (page: number, categoryId: number | null) => {
-    const params = new URLSearchParams()
-    params.set('page', page.toString())
-    if (categoryId) {
-      params.set('category', categoryId.toString())
-    }
-    router.push(`/product?${params.toString()}`)
-  }
+  const updateURL = useCallback((page: number, categoryId: number | null) => {
+    startTransition(() => {
+      const params = new URLSearchParams()
+      params.set('page', page.toString())
+      if (categoryId) {
+        params.set('category', categoryId.toString())
+      }
+      router.push(`/product?${params.toString()}`, { scroll: false })
+    })
+  }, [router, startTransition])
 
-  // Function to handle tab change
-  const handleTabChange = (tab: string) => {
+  const handleTabChange = useCallback((tab: string) => {
     const categoryId = categoryMapping[tab as keyof typeof categoryMapping]
-    updateURL(1, categoryId) // Reset to page 1 when changing category
-  }
+    updateURL(1, categoryId)
+  }, [categoryMapping, updateURL])
 
-  // Function to handle page change
-  const handlePageChange = (page: number) => {
+  const handlePageChange = useCallback((page: number) => {
     const categoryId = categoryMapping[currentTab as keyof typeof categoryMapping]
     updateURL(page, categoryId)
-  }
+  }, [categoryMapping, currentTab, updateURL])
+
+  const loadProducts = useCallback(async () => {
+    try {
+      setLoading(true)
+      setError(null)
+
+      const categoryId = categoryMapping[currentTab as keyof typeof categoryMapping]
+
+      const data: ProductListResponse = await fetchProducts(currentPage, itemsPerPage, categoryId || undefined)
+
+      if (data.categories && data.categories.data && categories.length === 0) {
+        setCategories(data.categories.data)
+      }
+
+      const productsWithNewFlag = data.data.data.map(product => ({
+        ...product,
+        isNew: isProductNew(product.createdAt)
+      }))
+
+      setProducts(productsWithNewFlag)
+      setTotalPages(data.meta.pagination.pageCount)
+
+    } catch (err) {
+      setError("Không thể tải sản phẩm")
+      console.error('Error loading products:', err)
+    } finally {
+      setLoading(false)
+    }
+  }, [currentPage, currentTab, categoryMapping, categories.length, itemsPerPage])
 
   useEffect(() => {
-    async function loadProducts() {
-      try {
-        setLoading(true)
-        const categoryId = categoryMapping[currentTab as keyof typeof categoryMapping]
+    const timeoutId = setTimeout(() => {
+      loadProducts()
+    }, 100)
 
-        console.log('Loading products:', { page: currentPage, limit: itemsPerPage, categoryId })
+    return () => clearTimeout(timeoutId)
+  }, [loadProducts])
 
-        const data: ProductListResponse = await fetchProducts(currentPage, itemsPerPage, categoryId || undefined)
+  const LoadingComponent = useMemo(() => (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="text-center py-10"
+    >
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#CC424E] mx-auto mb-4"></div>
+      <p className="text-gray-600">Đang tải sản phẩm...</p>
+    </motion.div>
+  ), [])
 
-        // Set categories from API response (only on first load or when categories are empty)
-        if (data.categories && data.categories.data && categories.length === 0) {
-          setCategories(data.categories.data)
-          console.log('Categories loaded:', data.categories.data)
-        }
+  const ErrorComponent = useMemo(() => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="text-center py-10"
+    >
+      <p className="text-red-500">{error}</p>
+      <button
+        onClick={loadProducts}
+        className="mt-4 px-4 py-2 bg-[#CC424E] text-white rounded-lg hover:bg-[#CC424E]/90 transition-colors"
+      >
+        Thử lại
+      </button>
+    </motion.div>
+  ), [error, loadProducts])
 
-        // Add isNew property based on creation date
-        const productsWithNewFlag = data.data.data.map(product => ({
-          ...product,
-          isNew: isProductNew(product.createdAt)
-        }))
-
-        setProducts(productsWithNewFlag)
-        setTotalProducts(data.meta.pagination.total)
-        setTotalPages(data.meta.pagination.pageCount)
-
-        console.log('Products loaded:', {
-          products: productsWithNewFlag.length,
-          total: data.meta.pagination.total,
-          pageCount: data.meta.pagination.pageCount,
-          currentPage: data.meta.pagination.page,
-          categories: data.categories?.data?.length || 0
-        })
-
-      } catch (err) {
-        setError("Không thể tải sản phẩm")
-        console.error('Error loading products:', err)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadProducts()
-  }, [currentPage, currentTab, categories.length])
-
-  // No need for client-side filtering since API handles it
-
-  if (loading) {
-    return <p className="text-center py-10">Đang tải sản phẩm...</p>
+  if (loading && products.length === 0) {
+    return LoadingComponent
   }
 
-  if (error) {
-    return <p className="text-center text-red-500 py-10">{error}</p>
+  if (error && products.length === 0) {
+    return ErrorComponent
   }
-  console.log('Products:', products)
 
-  console.log("Current state:", {
-    products: products.length,
-    currentPage,
-    currentTab,
-    totalPages,
-    totalProducts,
-    categories: categories.length,
-    categoryMapping,
-    tabs,
-    categoryId: categoryMapping[currentTab as keyof typeof categoryMapping]
-  })
+
 
   return (
     <>
@@ -146,61 +164,32 @@ export default function ProductTabsSection() {
         ))}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[15px] md:gap-x-6 gap-y-6 md:gap-y-10">
-        {products.map((product, index) => (
-          <motion.div
-            key={`${product.slug}-${index}`}
-            initial={{ opacity: 0, y: 5 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.20, ease: "easeOut" }}
-            style={{ willChange: "transform, opacity" }}
-            className="group space-y-2"
-          >
-            <Link href={`/product/${product.slug}`} key={index}>
-              <div className="relative group/card aspect-square overflow-hidden rounded-lg">
-                {product.isNew && (
-                  <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
-                    New
-                  </div>
-                )}
-                <Image
-                  src={product?.image?.url ? `${MEDIA_BASE_URL}${product.image.url}` : '/service/service-01.png'}
-                  alt={product?.title || 'Product image'}
-                  fill
-                  className="object-cover rounded-lg group-hover:rounded-lg transition-transform duration-500 ease-in-out"
-                  priority
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if (!target.src.includes('/service/service-01.png')) {
-                      target.src = '/service/service-01.png';
-                    }
-                  }}
-                />
-                <div className="absolute inset-0 flex items-end justify-center pb-[10%] opacity-0 translate-y-4 
-                        group-hover/card:opacity-100 group-hover/card:translate-y-0 
-                        transition-all duration-300 ease-in-out">
-                  <button
-                    className="group/btn relative hidden md:inline-flex w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
-                  >
-                    {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 
-                            group-hover/btn:-translate-y-1/2 
-                            transition-transform duration-300 ease-in-out z-[-1] bg-white" />
-                    <span className="relative z-10 text-base font-semibold">Xem chi tiết</span>
-                  </button>
-                </div>
+      <div className="relative">
+        <AnimatePresence>
+          {(loading && products.length > 0) && (
+            <motion.div
+              key="loading-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.7 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-white z-10 flex items-center justify-center rounded-lg"
+            >
+              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-[#CC424E]"></div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-              </div>
-              {/* <p className="text-base font-semibold text-[#15171B]">{product.name}</p> */}
-              <div className="mt-2 md:mt-4 text-center md:text-start">
-                <p className="text-xs md:text-base h-5 md:h-[30px] font-semibold text-[#15171B]">
-                  {product.title}
-                </p>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[15px] md:gap-x-6 gap-y-6 md:gap-y-10">
+          <AnimatePresence>
+            {products.map((product, index) => (
+              <ProductCard
+                key={`${product.documentId}-${currentPage}-${currentTab}`}
+                product={product}
+                index={index}
+              />
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
 
       <Pagination

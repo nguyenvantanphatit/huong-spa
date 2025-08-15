@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Container from "@/components/container"
 import SeactionContact from "@/components/seaction-contact"
 import Script from "next/script"
-import ProductTabsSection from "@/components/seaction/section-products"
+import ProductTabsSectionClient from "@/components/seaction/section-products-client"
 
 export const metadata: Metadata = {
   title: "Sản Phẩm | Ruby Hương Spa",
@@ -38,7 +38,7 @@ export default function BusinessPage() {
         }}
       />
       <div className="container px-6 mx-auto">
-        <ProductTabsSection />
+        <ProductTabsSectionClient />
       </div>
       <SeactionContact />
     </>
