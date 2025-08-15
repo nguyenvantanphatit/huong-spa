@@ -1,121 +1,13 @@
-// app/product/[slug]/page.tsx
 'use client'
-
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import ProductTabsSection from '@/components/seaction/section-products'
 import { motion } from 'framer-motion'
 import SeactionContact from '@/components/seaction-contact'
 import { useEffect, useState } from 'react'
-import { fetchProductBySlug, fetchProducts, Product } from '@/lib/api'
-
-
-
-
-
-// Mock data (có thể sau này fetch từ API)
-const productDetail = [
-    {
-        slug: "kem-duong-dem-kiwi",
-        name: "Kem dưỡng đêm kiwi",
-        title: "làm đẹp",
-        image: "/products/item-1.png",
-        description: `Hãy để kem dưỡng đồng hành cùng bạn trong hành trình tìm lại sự an yên và năng lượng sống tích cực. 
-Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
-        address: '30 Đặng Tất, P. Tân Định, TP.HCM',
-        phone: '0931 858 808',
-        isNew: true,
-    },
-    {
-        slug: "thach-anh-treo-phong",
-        name: "Thạch anh treo phòng",
-        title: "thực dưỡng",
-        image: "/products/item-2.png",
-        description: `Hãy để kem dưỡng đồng hành cùng bạn trong hành trình tìm lại sự an yên và năng lượng sống tích cực. 
-Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
-        address: '30 Đặng Tất, P. Tân Định, TP.HCM',
-        phone: '0931 858 808',
-        isNew: false,
-    },
-    {
-        slug: "sua-rua-mat-collagen",
-        name: "Sữa rửa mặt Collagen",
-        title: "làm đẹp",
-        image: "/products/item-3.png",
-        description: `Hãy để kem dưỡng đồng hành cùng bạn trong hành trình tìm lại sự an yên và năng lượng sống tích cực. 
-Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
-        address: '30 Đặng Tất, P. Tân Định, TP.HCM',
-        phone: '0931 858 808',
-        isNew: false,
-    },
-    {
-        slug: "mat-nam-chanh-tu",
-        name: "Mặt nạ chanh tươi",
-        title: "làm đẹp",
-        image: "/products/item-4.png",
-        description: `Hãy để kem dưỡng đồng hành cùng bạn trong hành trình tìm lại sự an yên và năng lượng sống tích cực. 
-Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
-        address: '30 Đặng Tất, P. Tân Định, TP.HCM',
-        phone: '0931 858 808',
-        isNew: false,
-    },
-    {
-        slug: "kem-duong-dem-kiwi",
-        name: "Kem dưỡng đêm kiwi",
-        title: "làm đẹp",
-        image: "/products/item-1.png",
-        description: `Hãy để kem dưỡng đồng hành cùng bạn trong hành trình tìm lại sự an yên và năng lượng sống tích cực. 
-Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
-        address: '30 Đặng Tất, P. Tân Định, TP.HCM',
-        phone: '0931 858 808',
-        isNew: true,
-    },
-    {
-        slug: "thach-anh-treo-phong",
-        name: "Thạch anh treo phòng",
-        title: "thực dưỡng",
-        image: "/products/item-2.png",
-        description: `Hãy để kem dưỡng đồng hành cùng bạn trong hành trình tìm lại sự an yên và năng lượng sống tích cực. 
-Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
-        address: '30 Đặng Tất, P. Tân Định, TP.HCM',
-        phone: '0931 858 808',
-        isNew: false,
-    },
-    {
-        slug: "sua-rua-mat-collagen",
-        name: "Sữa rửa mặt Collagen",
-        title: "làm đẹp",
-        image: "/products/item-3.png",
-        description: `Hãy để kem dưỡng đồng hành cùng bạn trong hành trình tìm lại sự an yên và năng lượng sống tích cực. 
-Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
-        address: '30 Đặng Tất, P. Tân Định, TP.HCM',
-        phone: '0931 858 808',
-        isNew: false,
-    },
-    {
-        slug: "mat-nam-chanh-tu",
-        name: "Mặt nạ chanh tươi",
-        title: "làm đẹp",
-        image: "/products/item-4.png",
-        description: `Hãy để kem dưỡng đồng hành cùng bạn trong hành trình tìm lại sự an yên và năng lượng sống tích cực. 
-Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân theo cách trọn vẹn nhất nhé!`,
-        address: '30 Đặng Tất, P. Tân Định, TP.HCM',
-        phone: '0931 858 808',
-        isNew: false,
-    },
-]
+import { fetchProductBySlug, fetchProducts, Product, MEDIA_BASE_URL } from '@/lib/api'
 
 export default function ProductDetailPage() {
-    // const { slug } = useParams()
-
-    // const product = productDetail.find(p => p.slug === slug)
-
-
-    // if (!product) {
-    //     return <div className="text-center py-20">Không tìm thấy sản phẩm</div>
-    // }
-
     const { slug } = useParams()
     const [product, setProduct] = useState<Product | null>(null)
     const [otherProducts, setOtherProducts] = useState<Product[]>([])
@@ -156,7 +48,7 @@ export default function ProductDetailPage() {
                     <div className="relative rounded-2xl overflow-hidden">
                         <div className="relative aspect-square w-full">
                             <Image
-                                src={product?.image?.url || '/placeholder.png'}
+                                src={product?.image?.url ? `${MEDIA_BASE_URL}${product.image.url}` : '/placeholder.png'}
                                 alt={product?.title || ''}
                                 fill
                                 className="object-cover"
@@ -260,7 +152,7 @@ export default function ProductDetailPage() {
                             >
                                 <div className="relative aspect-square overflow-hidden rounded-lg">
                                     <Image
-                                        src={otherProducts.image?.url || '"/products/item-1.png"'}
+                                        src={otherProducts.image?.url ? `${MEDIA_BASE_URL}${otherProducts.image.url}` : '/products/item-1.png'}
                                         alt={otherProducts.title}
                                         fill
                                         className="object-cover"

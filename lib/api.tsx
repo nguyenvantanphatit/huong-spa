@@ -1,4 +1,5 @@
 const API_BASE_URL = 'http://localhost:1337/api'
+export const MEDIA_BASE_URL = 'http://localhost:1337'
 // product.interface.ts
 
 export interface Category {
@@ -25,8 +26,8 @@ export interface Product {
     updatedAt: string;
     category: Category;
     image: Image;
-    isNew: boolean;
-    name: string;
+    isNew?: boolean; // Make optional since it's not in API response
+    name?: string; // Make optional since it's not in API response
 }
 
 export interface ProductListResponse {
@@ -51,10 +52,17 @@ export interface Pagination {
 }
 
 
-// Lấy danh sách sản phẩm
-export async function fetchProducts(): Promise<ProductListResponse> {
+// Lấy danh sách sản phẩm với pagination và category filter
+export async function fetchProducts(page = 1, limit = 8, categoryId?: number): Promise<ProductListResponse> {
     try {
-        const response = await fetch(`${API_BASE_URL}/products/all`, {
+        let url = `${API_BASE_URL}/products/all?limit=${limit}&page=${page}`;
+
+        // Thêm category filter nếu có
+        if (categoryId) {
+            url += `&category=${categoryId}`;
+        }
+
+        const response = await fetch(url, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -100,6 +108,61 @@ export async function fetchProductBySlug(slug: string): Promise<Product> {
         return product as Product;
     } catch (error) {
         console.error("Error fetching product details:", error);
+        throw error;
+    }
+}
+
+// Helper function để kiểm tra sản phẩm có mới không (tạo trong 30 ngày qua)
+export const isProductNew = (createdAt: string): boolean => {
+    const createdDate = new Date(createdAt)
+    const thirtyDaysAgo = new Date()
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
+    return createdDate > thirtyDaysAgo
+}
+
+// Interface cho API response của /products/latest
+export interface LatestProductsResponse {
+    data: Product[];
+    meta: Record<string, unknown>;
+}
+
+// Lấy sản phẩm mới nhất từ API endpoint /products/latest
+export async function fetchLatestProducts(): Promise<Product[]> {
+    try {
+        const response = await fetch(`${API_BASE_URL}/products/latest`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            next: { revalidate: 300 },
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data: LatestProductsResponse = await response.json();
+
+        // Thêm thuộc tính isNew vào từng sản phẩm
+        const productsWithNewFlag = data.data.map(product => ({
+            ...product,
+            isNew: isProductNew(product.createdAt)
+        }));
+
+        return productsWithNewFlag;
+    } catch (error) {
+        console.error("Error fetching latest products:", error);
+        throw error;
+    }
+}
+
+// Lấy 1 sản phẩm mới nhất dựa vào createdAt
+export async function fetchLatestProduct(): Promise<Product | null> {
+    try {
+        const products = await fetchLatestProducts();
+        return products.length > 0 ? products[0] : null;
+    } catch (error) {
+        console.error("Error fetching latest product:", error);
         throw error;
     }
 }
