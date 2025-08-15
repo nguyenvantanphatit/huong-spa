@@ -7,6 +7,8 @@ import Link from 'next/link'
 import ProductTabsSection from '@/components/seaction/section-products'
 import { motion } from 'framer-motion'
 import SeactionContact from '@/components/seaction-contact'
+import { useEffect, useState } from 'react'
+import { fetchProductBySlug, fetchProducts, Product } from '@/lib/api'
 
 
 
@@ -105,10 +107,42 @@ Khách yêu hãy đặt lịch ngay hôm nay để yêu thương bản thân the
 ]
 
 export default function ProductDetailPage() {
+    // const { slug } = useParams()
+
+    // const product = productDetail.find(p => p.slug === slug)
+
+
+    // if (!product) {
+    //     return <div className="text-center py-20">Không tìm thấy sản phẩm</div>
+    // }
+
     const { slug } = useParams()
+    const [product, setProduct] = useState<Product | null>(null)
+    const [otherProducts, setOtherProducts] = useState<Product[]>([])
+    const [loading, setLoading] = useState(true)
 
-    const product = productDetail.find(p => p.slug === slug)
+    useEffect(() => {
+        if (!slug) return
+        const loadData = async () => {
+            try {
+                setLoading(true)
+                const productData = await fetchProductBySlug(slug as string)
+                setProduct(productData)
 
+                const listData = await fetchProducts()
+                setOtherProducts(listData.data.data.filter(p => p.slug !== slug))
+            } catch (error) {
+                console.error(error)
+            } finally {
+                setLoading(false)
+            }
+        }
+        loadData()
+    }, [slug])
+
+    if (loading) {
+        return <div className="text-center py-20">Đang tải...</div>
+    }
 
     if (!product) {
         return <div className="text-center py-20">Không tìm thấy sản phẩm</div>
@@ -122,8 +156,8 @@ export default function ProductDetailPage() {
                     <div className="relative rounded-2xl overflow-hidden">
                         <div className="relative aspect-square w-full">
                             <Image
-                                src={product.image}
-                                alt={product.name}
+                                src={product?.image?.url || '/placeholder.png'}
+                                alt={product?.title || ''}
                                 fill
                                 className="object-cover"
                             />
@@ -138,14 +172,21 @@ export default function ProductDetailPage() {
                     {/* Info section */}
                     <div className="flex flex-col justify-center space-y-6">
                         <div className="text-sm text-[#2E333D]">
-                            <Link href="/">Sản phẩm</Link> &nbsp;/&nbsp;
+                            <Link href="/">{product?.category?.name}</Link> &nbsp;/&nbsp;
                             <Link href={`/`}>{product.title}</Link> &nbsp;/&nbsp;
-                            <span className="font-semibold text-[#2E333D]">{product.name}</span>
+                            <span className="font-semibold text-[#2E333D]">{product.title}</span>
                         </div>
 
-                        <p className="text-xl md:text-[32px] font-bold text-[#15171B]">{product.name}</p>
+                        <p className="text-xl md:text-[32px] font-bold text-[#15171B]">{product.title}</p>
+                        {product?.description && (
+                            <div
+                                className="text-[#434343] prose prose-sm max-w-none"
+                                dangerouslySetInnerHTML={{ __html: product.description }}
+                            />
+                        )}
 
-                        <p className="text-[#2E333D] leading-relaxed whitespace-pre-line">{product.description}</p>
+
+                        {/* <p className="text-[#2E333D] leading-relaxed whitespace-pre-line">{product.description}</p> */}
 
                         {/* Contact buttons */}
                         <div className="space-y-4">
@@ -173,14 +214,14 @@ export default function ProductDetailPage() {
                             </a>
 
                             <a
-                                href={`tel:${product.phone}`}
+                                href={`tel:0931858808`}
                                 className="group relative inline-flex w-full items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] text-[#CC424E] overflow-hidden hover:text-white"
                             >
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full group-hover:-translate-y-1/2 transition-transform duration-300 ease-in-out z-[-1] bg-[#CC424E]" />
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.162 3.487a1 1 0 01-.272 1.057L7.21 10.882a16.001 16.001 0 006.908 6.908l2.654-2.654a1 1 0 011.057-.272l3.487 1.162a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
                                 </svg>
-                                {product.phone}
+                                0931 858 808
                             </a>
 
                             <div className="text-sm text-[#3E4450] flex flex-col md:flex-row gap-1">
@@ -208,8 +249,8 @@ export default function ProductDetailPage() {
 
                 {/* Product Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {productDetail.map((productDetail, index) => (
-                        <Link key={index} href={`/product/${productDetail.slug}`}>
+                    {otherProducts.map((otherProducts, index) => (
+                        <Link key={otherProducts.id} href={`/product/${otherProducts.slug}`}>
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -219,13 +260,13 @@ export default function ProductDetailPage() {
                             >
                                 <div className="relative aspect-square overflow-hidden rounded-lg">
                                     <Image
-                                        src={productDetail.image}
-                                        alt={productDetail.name}
+                                        src={otherProducts.image?.url || '"/products/item-1.png"'}
+                                        alt={otherProducts.title}
                                         fill
                                         className="object-cover"
                                     />
                                 </div>
-                                <p className="text-sm font-semibold">{productDetail.name}</p>
+                                <p className="text-sm font-semibold">{otherProducts.title}</p>
                             </motion.div>
                         </Link>
                     ))}

@@ -2,10 +2,11 @@
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import AnimateOnScroll from "../animations/AnimateOnScroll"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Pagination } from "../ui/Pagination"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { fetchProducts, Product, ProductListResponse } from "@/lib/api"
 
 
 
@@ -139,17 +140,53 @@ const productData: ProductSection[] = [
 const tabs = ["Tất cả", "Thực dưỡng", "Làm đẹp"]
 
 export default function ProductTabsSection() {
+  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
   const [currentTab, setCurrentTab] = useState("Tất cả")
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 20
 
+  useEffect(() => {
+    async function loadProducts() {
+      try {
+        setLoading(true)
+        const data: ProductListResponse = await fetchProducts()
+        setProducts(data.data.data)
+      } catch (err) {
+        setError("Không thể tải sản phẩm")
+        console.error(err)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadProducts()
+  }, [])
+
   const filteredData =
     currentTab === "Tất cả"
-      ? productData
-      : productData.filter(item => item.title.toLowerCase() === currentTab.toLowerCase())
+      ? products
+      : products.filter(
+        item =>
+          item.category.name.toLowerCase() === currentTab.toLowerCase()
+      )
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage)
-  const paginatedData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+  const paginatedData = filteredData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  )
+
+  if (loading) {
+    return <p className="text-center py-10">Đang tải sản phẩm...</p>
+  }
+
+  if (error) {
+    return <p className="text-center text-red-500 py-10">{error}</p>
+  }
+
+  console.log(products)
 
   return (
     <>
@@ -197,11 +234,17 @@ export default function ProductTabsSection() {
                   </div>
                 )}
                 <Image
-                  src={product.image}
-                  alt={product.name}
+                  src={product?.image?.url}
+                  alt={product?.title}
                   fill
                   className="object-cover rounded-lg group-hover:rounded-lg  transition-transform duration-500 ease-in-out"
                   priority
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (!target.src.includes('/service/service-01.png')) {
+                      target.src = '/service/service-01.png';
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 flex items-end justify-center pb-[10%] opacity-0 translate-y-4 
                         group-hover/card:opacity-100 group-hover/card:translate-y-0 
@@ -221,7 +264,7 @@ export default function ProductTabsSection() {
               {/* <p className="text-base font-semibold text-[#15171B]">{product.name}</p> */}
               <div className="mt-2 md:mt-4 text-center md:text-start">
                 <p className="text-xs md:text-base h-5 md:h-[30px] font-semibold text-[#15171B]">
-                  {product.name}
+                  {product.title}
                 </p>
               </div>
             </Link>
