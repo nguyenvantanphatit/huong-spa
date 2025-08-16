@@ -181,31 +181,33 @@ export default function ProductDetailPage() {
                                 viewport={{ once: true }}
                                 className="relative group space-y-2"
                             >
-                                <div className="relative aspect-square overflow-hidden rounded-lg">
-                                    <Image
-                                        src={otherProducts.image?.url ? `${MEDIA_BASE_URL}${otherProducts.image.url}` : '/products/item-1.png'}
-                                        alt={otherProducts.title}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    {product.isNew && (
-                                        <div className="absolute top-4 left-4 bg-[#679132] text-white text-xs font-semibold px-3 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
-                                            New
-                                        </div>
-                                    )}
-                                </div>
-                                <div className="absolute inset-0 flex items-end justify-center pb-[30%] opacity-0 translate-y-4 
+                                <div className="relative transition-all duration-300 group-hover:scale-95">
+                                    <div className="relative aspect-square overflow-hidden rounded-lg">
+                                        <Image
+                                            src={otherProducts.image?.url ? `${MEDIA_BASE_URL}${otherProducts.image.url}` : '/products/item-1.png'}
+                                            alt={otherProducts.title}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        {otherProducts.isNew && index === 0 && (
+                                            <div className="absolute top-4 left-4 bg-[#679132] text-white text-xs font-semibold px-3 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
+                                                New
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className="absolute inset-0 flex items-end justify-center pb-[30%] opacity-0 translate-y-4 
                   group-hover:opacity-100 group-hover:translate-y-0 
                   transition-all duration-300 ease-in-out">
-                                    <button
-                                        className="hidden md:inline-flex group/btn relative w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
-                                    >
-                                        {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
-                                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 
+                                        <button
+                                            className="hidden md:inline-flex group/btn relative w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
+                                        >
+                                            {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
+                                            <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 
                       group-hover/btn:-translate-y-1/2 
                       transition-transform duration-300 ease-in-out z-[-1] bg-white" />
-                                        <span className="relative z-10 text-base font-semibold">Xem chi tiết</span>
-                                    </button>
+                                            <span className="relative z-10 text-base font-semibold">Xem chi tiết</span>
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <div className="mt-2 md:mt-4 text-center md:text-start">
