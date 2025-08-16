@@ -12,16 +12,12 @@ export default async function FooterSeaction() {
         }}
       >
         <Container>
-          {/* Logo center
           <div className="flex justify-center">
             <img
-              src="/new/logo-footer.svg"
+              src="/logo/logoFooter.svg"
               className="object-contain w-[180px] md:w-[260px] mt-8"
               alt="Hương Logo"
             />
-          </div> */}
-          <div className="flex justify-center mt-5 md:mt-8">
-            <h1 className="text-base text-[24px] md:text-[60px] font-bold text-[#2E333D]">RUBY HƯƠNG SPA</h1>
           </div>
 
           {/* Navigation */}

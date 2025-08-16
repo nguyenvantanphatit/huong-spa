@@ -79,39 +79,41 @@ export default function SeactionProduct() {
                 viewport={{ once: true }}
               >
                 <div key={index} className="relative group/card">
+                  <div className="transform transition-transform duration-300 ease-in-out group-hover/card:scale-95">
+                    {product.isNew && index === 0 && (
+                      <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
+                        New
+                      </div>
+                    )}
 
-                  {product.isNew && (
-                    <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
-                      New
-                    </div>
-                  )}
-                  <Image
-                    src={product.image?.url ? `${MEDIA_BASE_URL}${product.image.url}` : '/service/service-01.png'}
-                    alt={product.title}
-                    width={320}
-                    height={320}
-                    className="w-full h-[156px] md:h-[320px] object-cover rounded-[20px]"
-                  />
+                    <Image
+                      src={product.image?.url ? `${MEDIA_BASE_URL}${product.image.url}` : '/service/service-01.png'}
+                      alt={product.title}
+                      width={320}
+                      height={320}
+                      className="w-full h-[156px] md:h-[320px] object-cover rounded-[20px]"
+                    />
 
-                  {/* Nút chỉ hiện khi hover card */}
-                  <div className="absolute inset-0 flex items-end justify-center pb-[30%] opacity-0 translate-y-4 
+                    {/* Nút chỉ hiện khi hover card */}
+                    <div className="absolute inset-0 flex items-end justify-center pb-[30%] opacity-0 translate-y-4 
                   group-hover/card:opacity-100 group-hover/card:translate-y-0 
                   transition-all duration-300 ease-in-out">
-                    <button
-                      className="hidden md:inline-flex group/btn relative w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
-                    >
-                      {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 
+                      <button
+                        className="hidden md:inline-flex group/btn relative w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
+                      >
+                        {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 
                       group-hover/btn:-translate-y-1/2 
                       transition-transform duration-300 ease-in-out z-[-1] bg-white" />
-                      <span className="relative z-10 text-base font-semibold">Xem chi tiết</span>
-                    </button>
-                  </div>
+                        <span className="relative z-10 text-base font-semibold">Xem chi tiết</span>
+                      </button>
+                    </div>
 
-                  <div className="mt-2 md:mt-4 text-center md:text-start">
-                    <p className="text-xs md:text-lg h-5 md:h-[30px] font-semibold text-[#15171B]">
-                      {product.title}
-                    </p>
+                    <div className="mt-2 md:mt-4 text-center md:text-start">
+                      <p className="text-xs md:text-lg h-5 md:h-[30px] font-semibold text-[#15171B]">
+                        {product.title}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>

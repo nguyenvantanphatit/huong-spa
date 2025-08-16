@@ -245,19 +245,15 @@ export default function Header() {
     >
       <div className="container mx-auto px-10">
         <div className="flex items-center justify-between h-20">
-          {/* <Link href="/" className="relative w-32 h-10">
+          <Link href="/" className="relative w-32 h-10">
             <Image
-              src={isHome ? "/logo/logoHuongSpa.png" : "/logo/logoHuongSpa.png"}
+              src={isHome ? "/logo/logoHeader.svg" : "/logo/logoHeader.svg"}
               alt="Hương Spa"
               fill
               className="object-contain h-full w-full"
               priority
             />
-          </Link> */}
-
-          <div className="flex items-center space-x-[60px]">
-            <span className="text-[20px] font-bold text-[#CC424E]">LOGO</span>
-          </div>
+          </Link>
 
           {/* <div className="flex text-sm font-normal items-center space-x-[60px]">
             {menuItems.map((item) => {

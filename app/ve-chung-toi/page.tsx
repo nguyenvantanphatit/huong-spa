@@ -20,7 +20,7 @@ export default async function AboutPage() {
   const device = cookieStore.get("X-Device")?.value
 
   const isMobile = device === "mobile"
-  const backgroundSrc = isMobile ? "/logo/logoHuongSpa.png" : "/logo/logoHuongSpa.png"
+  const backgroundSrc = isMobile ? "/logoAbout.svg" : "/logo/logoAbout.svg"
 
   return (
     <>
@@ -50,17 +50,13 @@ export default async function AboutPage() {
       />
       <Container>
         <section className="mt-20 max-h-[606px]">
-          {/* <Image
-              src={backgroundSrc}
-              alt="Logo About"
-              width={1022}
-              height={606}
-              className="w-full h-[200px] object-contain"
-            /> */}
-
-          <div className="flex justify-center mx-auto">
-            <p className="text-[62px] md:text-[192px] leading-[82px] md:leading-[144px] font-bold text-[#CC424E]">LOGO</p>
-          </div>
+          <Image
+            src={backgroundSrc}
+            alt="Logo About"
+            width={1022}
+            height={606}
+            className="w-full h-[200px] object-contain"
+          />
         </section>
 
         <div className="flex flex-col justify-center gap-7 md:gap-10 text-center md:my-10">

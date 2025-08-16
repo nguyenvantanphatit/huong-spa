@@ -20,7 +20,7 @@ const ProductCard = memo(function ProductCard({ product, index }: ProductCardPro
       className="group space-y-2"
     >
       <Link href={`/product/${product.slug}`}>
-        <div className="relative group/card aspect-square overflow-hidden rounded-lg">
+        <div className="relative group/card aspect-square overflow-hidden rounded-lg group-hover:scale-95 transition-transform duration-500">
           {product.isNew && (
             <div className="absolute top-2 left-2 bg-[#679132] text-white text-xs font-semibold px-2 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
               New
@@ -31,7 +31,7 @@ const ProductCard = memo(function ProductCard({ product, index }: ProductCardPro
             src={product?.image?.url ? `${MEDIA_BASE_URL}${product.image.url}` : '/service/service-01.png'}
             alt={product?.title || 'Product image'}
             fill
-            className="object-cover rounded-lg group-hover:rounded-lg transition-transform duration-500 ease-in-out"
+            className="object-cover rounded-lg group-hover:rounded-lg transition-transform duration-500 ease-in-out "
             priority={index < 4}
             loading={index < 4 ? 'eager' : 'lazy'}
             onError={(e) => {
