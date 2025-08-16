@@ -6,7 +6,7 @@ import Hero from "@/components/hero"
 import SeactionHome from "@/components/seaction/seaction-home"
 import SeactionBusiness from "@/components/seaction/seaction-business"
 import Script from "next/script"
-import SeactionProduct from "@/components/seaction/seaction-product"
+import SeactionProduct from "@/components/seaction/seaction-latest-products"
 import SeactionDesc from "@/components/seaction/seaction-desc"
 
 export const metadata: Metadata = {
