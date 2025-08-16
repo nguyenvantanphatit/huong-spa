@@ -52,6 +52,29 @@ export interface Pagination {
 }
 
 
+// Lấy all danh sách sản phẩm với tab "tất cả"
+export async function fetchProductAll(): Promise<ProductListResponse> {
+    try {
+        const response = await fetch(`${API_BASE_URL}/products/all`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            next: { revalidate: 300 },
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data: ProductListResponse = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching products:", error);
+        throw error;
+    }
+}
+
 // Lấy danh sách sản phẩm với pagination và category filter
 export async function fetchProducts(page = 1, limit = 8, categoryId?: number): Promise<ProductListResponse> {
     try {

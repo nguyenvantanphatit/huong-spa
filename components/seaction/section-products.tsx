@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback, useMemo, useTransition } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Pagination } from "../ui/Pagination"
 import { cn } from "@/lib/utils"
-import { fetchProducts, Product, ProductListResponse, isProductNew, Category } from "@/lib/api"
+import { fetchProducts, Product, ProductListResponse, isProductNew, Category, fetchProductAll } from "@/lib/api"
 import ProductCard from "@/components/product-card"
 
 export default function ProductTabsSection() {
@@ -23,15 +23,15 @@ export default function ProductTabsSection() {
       acc[category.name] = category.id
       return acc
     }, { "Tất cả": null } as Record<string, number | null>)
-  , [categories])
+    , [categories])
 
   const tabs = useMemo(() =>
     ["Tất cả", ...categories.map(cat => cat.name)]
-  , [categories])
+    , [categories])
 
   const currentPage = useMemo(() =>
     parseInt(searchParams.get('page') || '1')
-  , [searchParams])
+    , [searchParams])
 
   const categoryParam = searchParams.get('category')
   const currentTab = useMemo(() =>
@@ -40,7 +40,7 @@ export default function ProductTabsSection() {
         categoryMapping[key as keyof typeof categoryMapping] === parseInt(categoryParam)
       ) || "Tất cả"
       : "Tất cả"
-  , [categoryParam, categoryMapping])
+    , [categoryParam, categoryMapping])
 
   const itemsPerPage = 8
 
@@ -65,16 +65,54 @@ export default function ProductTabsSection() {
     updateURL(page, categoryId)
   }, [categoryMapping, currentTab, updateURL])
 
+  // const loadProducts = useCallback(async () => {
+  //   try {
+  //     setLoading(true)
+  //     setError(null)
+
+  //     const categoryId = categoryMapping[currentTab as keyof typeof categoryMapping]
+
+  //     const data: ProductListResponse = await fetchProducts(currentPage, itemsPerPage, categoryId || undefined)
+
+  //     if (data.categories && data.categories.data && categories.length === 0) {
+  //       setCategories(data.categories.data)
+  //     }
+
+  //     const productsWithNewFlag = data.data.data.map(product => ({
+  //       ...product,
+  //       isNew: isProductNew(product.createdAt)
+  //     }))
+
+  //     setProducts(productsWithNewFlag)
+  //     setTotalPages(data.meta.pagination.pageCount)
+
+  //   } catch (err) {
+  //     setError("Không thể tải sản phẩm")
+  //     console.error('Error loading products:', err)
+  //   } finally {
+  //     setLoading(false)
+  //   }
+  // }, [currentPage, currentTab, categoryMapping, categories.length, itemsPerPage])
+
   const loadProducts = useCallback(async () => {
     try {
       setLoading(true)
       setError(null)
 
-      const categoryId = categoryMapping[currentTab as keyof typeof categoryMapping]
+      let data: ProductListResponse
 
-      const data: ProductListResponse = await fetchProducts(currentPage, itemsPerPage, categoryId || undefined)
+      const categoryId = categoryMapping[currentTab as keyof typeof categoryMapping] ?? null
 
-      if (data.categories && data.categories.data && categories.length === 0) {
+      if (currentTab === "Tất cả" || categoryId === null) {
+        // Nếu tab "Tất cả", gọi API lấy toàn bộ
+        data = await fetchProductAll()
+      } else {
+        // Các tab khác: filter theo category
+        data = await fetchProducts(currentPage, itemsPerPage, categoryId)
+      }
+
+      // Load categories nếu chưa có
+      if (data.categories?.data && categories.length === 0) {
         setCategories(data.categories.data)
       }
 
@@ -93,6 +131,8 @@ export default function ProductTabsSection() {
       setLoading(false)
     }
   }, [currentPage, currentTab, categoryMapping, categories.length, itemsPerPage])
+
+
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {

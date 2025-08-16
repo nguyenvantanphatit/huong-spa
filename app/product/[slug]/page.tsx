@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import SeactionContact from '@/components/seaction-contact'
 import { useEffect, useState } from 'react'
-import { fetchProductBySlug, fetchProducts, Product, MEDIA_BASE_URL } from '@/lib/api'
+import { fetchProductBySlug, fetchProducts, Product, MEDIA_BASE_URL, isProductNew } from '@/lib/api'
 
 export default function ProductDetailPage() {
     const { slug } = useParams()
@@ -18,11 +18,26 @@ export default function ProductDetailPage() {
         const loadData = async () => {
             try {
                 setLoading(true)
-                const productData = await fetchProductBySlug(slug as string)
-                setProduct(productData)
 
+                // Lấy chi tiết product
+                const productData = await fetchProductBySlug(slug as string)
+                // Gắn isNew cho product chính
+                const productWithFlag = {
+                    ...productData,
+                    isNew: isProductNew(productData.createdAt)
+                }
+                setProduct(productWithFlag)
+
+                // Lấy danh sách sản phẩm khác
                 const listData = await fetchProducts()
-                setOtherProducts(listData.data.data.filter(p => p.slug !== slug))
+                const otherProductsWithFlag = listData.data.data
+                    .filter(p => p.slug !== slug)
+                    .map(p => ({
+                        ...p,
+                        isNew: isProductNew(p.createdAt)
+                    }))
+                setOtherProducts(otherProductsWithFlag)
+
             } catch (error) {
                 console.error(error)
             } finally {
@@ -31,6 +46,25 @@ export default function ProductDetailPage() {
         }
         loadData()
     }, [slug])
+
+    // useEffect(() => {
+    //     if (!slug) return
+    //     const loadData = async () => {
+    //         try {
+    //             setLoading(true)
+    //             const productData = await fetchProductBySlug(slug as string)
+    //             setProduct(productData)
+
+    //             const listData = await fetchProducts()
+    //             setOtherProducts(listData.data.data.filter(p => p.slug !== slug))
+    //         } catch (error) {
+    //             console.error(error)
+    //         } finally {
+    //             setLoading(false)
+    //         }
+    //     }
+    //     loadData()
+    // }, [slug])
 
     if (loading) {
         return <div className="text-center py-20">Đang tải...</div>
@@ -55,17 +89,17 @@ export default function ProductDetailPage() {
                             />
                         </div>
                         {product.isNew && (
-                            <span className="absolute top-4 left-4 bg-green-600 text-white text-sm font-medium px-3 py-1 rounded-full shadow">
+                            <div className="absolute top-4 left-4 bg-[#679132] text-white text-xs font-semibold px-3 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
                                 New
-                            </span>
+                            </div>
                         )}
                     </div>
 
                     {/* Info section */}
                     <div className="flex flex-col justify-center space-y-6">
                         <div className="text-sm text-[#2E333D]">
-                            <Link href="/">{product?.category?.name}</Link> &nbsp;/&nbsp;
-                            <Link href={`/`}>{product.title}</Link> &nbsp;/&nbsp;
+                            <Link href="/">Sản Phẩm</Link> &nbsp;/&nbsp;
+                            <Link href={`/`}>{product?.category?.name}</Link> &nbsp;/&nbsp;
                             <span className="font-semibold text-[#2E333D]">{product.title}</span>
                         </div>
 
@@ -76,9 +110,6 @@ export default function ProductDetailPage() {
                                 dangerouslySetInnerHTML={{ __html: product.description }}
                             />
                         )}
-
-
-                        {/* <p className="text-[#2E333D] leading-relaxed whitespace-pre-line">{product.description}</p> */}
 
                         {/* Contact buttons */}
                         <div className="space-y-4">
@@ -148,7 +179,7 @@ export default function ProductDetailPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="group space-y-2"
+                                className="relative group space-y-2"
                             >
                                 <div className="relative aspect-square overflow-hidden rounded-lg">
                                     <Image
@@ -157,8 +188,31 @@ export default function ProductDetailPage() {
                                         fill
                                         className="object-cover"
                                     />
+                                    {product.isNew && (
+                                        <div className="absolute top-4 left-4 bg-[#679132] text-white text-xs font-semibold px-3 py-1 rounded-[13.33px] rounded-tr-[6.67px] z-10">
+                                            New
+                                        </div>
+                                    )}
                                 </div>
-                                <p className="text-sm font-semibold">{otherProducts.title}</p>
+                                <div className="absolute inset-0 flex items-end justify-center pb-[30%] opacity-0 translate-y-4 
+                  group-hover:opacity-100 group-hover:translate-y-0 
+                  transition-all duration-300 ease-in-out">
+                                    <button
+                                        className="hidden md:inline-flex group/btn relative w-[220px] items-center justify-center gap-2 py-4 px-10 font-semibold rounded-full whitespace-nowrap border-2 border-[#CC424E] bg-[#CC424E] text-white overflow-hidden hover:text-[#CC424E] hover:bg-transparent hover:border-transparent"
+                                    >
+                                        {/* Hiệu ứng vòng tròn chỉ khi hover nút */}
+                                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-full 
+                      group-hover/btn:-translate-y-1/2 
+                      transition-transform duration-300 ease-in-out z-[-1] bg-white" />
+                                        <span className="relative z-10 text-base font-semibold">Xem chi tiết</span>
+                                    </button>
+                                </div>
+
+                                <div className="mt-2 md:mt-4 text-center md:text-start">
+                                    <p className="text-xs md:text-lg h-5 md:h-[30px] font-semibold text-[#15171B]">
+                                        {otherProducts.title}
+                                    </p>
+                                </div>
                             </motion.div>
                         </Link>
                     ))}
